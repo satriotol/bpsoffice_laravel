@@ -16,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'home'])->name('home');
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+});
+
+require __DIR__ . '/auth.php';
