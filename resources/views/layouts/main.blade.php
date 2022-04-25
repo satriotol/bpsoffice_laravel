@@ -36,6 +36,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+    @stack('style')
 
     <!-- =======================================================
   * Template Name: Scaffold - v4.7.0
