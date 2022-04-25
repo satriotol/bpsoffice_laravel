@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('unit_id');
             $table->text('description');
-            $table->image('image');
+            $table->string('image');
             $table->timestamps();
         });
     }
