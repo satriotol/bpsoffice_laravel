@@ -9,7 +9,13 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                <li><a class="nav-link active">Home</a></li>
+                <li><a class="nav-link">Tentang Kami</a></li>
+                <li><a class="nav-link">Gallery</a></li>
+                <li><a class="nav-link">Kontak</a></li>
+                <li><a class="nav-link">Investasi</a></li>
+                <li><a class="nav-link">Karir</a></li>
+                <li><a class="nav-link">FPKK 01</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
