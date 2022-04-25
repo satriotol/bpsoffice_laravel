@@ -13,6 +13,11 @@
                     <span>Dashboard</span>
                 </a>
             </li>
+            <li class="active"><a class="nav-link" href="{{ route('sliders.index') }}">
+                    <i class="far fa-square"></i>
+                    <span>Slider</span>
+                </a>
+            </li>
 
         </ul>
     </aside>

@@ -52,6 +52,14 @@
     <!-- Template JS File -->
     <script src="{{ asset('assets_admin/js/scripts.js') }}"></script>
     <script src="{{ asset('assets_admin/js/custom.js') }}"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
+    </script>
+
     <!-- Page Specific JS File -->
 </body>
 
