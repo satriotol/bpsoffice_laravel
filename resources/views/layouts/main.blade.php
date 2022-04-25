@@ -49,8 +49,8 @@
 <body>
 
     @include('layouts.navbar')
+    @yield('content')
     <section id="hero">
-        @yield('content')
         {{-- <div class="container">
             <div class="row">
                 <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
