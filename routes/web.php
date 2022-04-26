@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UnitController;
@@ -26,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
         'slider' => SliderController::class,
         'unit' => UnitController::class,
         'partner' => PartnerController::class,
+        'about' => AboutController::class,
     ]);
 });
 

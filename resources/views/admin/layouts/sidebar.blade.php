@@ -32,6 +32,12 @@
                     <span>Partner</span>
                 </a>
             </li>
+            <li class="{{ Request::routeIs('about.*') ? 'active' : '' }}"><a class="nav-link"
+                    href="{{ route('about.index') }}">
+                    <i class="far fa-square"></i>
+                    <span>Tentang</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>
