@@ -67,6 +67,25 @@
 
             </div>
         </section>
+        <section id="cta" class="cta">
+            <div class="container">
+
+                <div class="row aos-init aos-animate" data-aos="zoom-in">
+                    <div class="col-lg-9 text-center text-lg-start">
+                        <h3>INVESTASI</h3>
+                        <p>Dalam rangka pengembangan dan rencana kerja tahunan, kami membuka kesempatan bagi Investor untuk
+                            bergabung bersama kami untuk bersama-sama mewujudkan rencana pengembangan dan program kerja yang
+                            telah kami rencanakan.
+                            Hubungi kami untuk keterangan lebih lanjut...
+                            Salam Sukses selalu... </p>
+                    </div>
+                    <div class="col-lg-3 cta-btn-container text-center">
+                        <a class="cta-btn align-middle" href="#">Masuk</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
         <section id="clients" class="clients">
             <div class="container">
                 <div class="section-title aos-init aos-animate" data-aos="fade-up">
