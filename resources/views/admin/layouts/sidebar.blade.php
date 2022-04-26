@@ -1,24 +1,29 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ route('admin') }}">PT BSP</a>
+            <a href="{{ route('admin') }}">PT BPS</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ route('admin') }}">BSP</a>
+            <a href="{{ route('admin') }}">BPS</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Admin Area</li>
-            <li class="active"><a class="nav-link" href="{{ route('admin') }}">
+            <li class="{{ Request::routeIs('admin') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin') }}">
                     <i class="far fa-square"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li><a class="nav-link" href="{{ route('slider.index') }}">
+            <li class="{{ Request::routeIs('slider.*') ? 'active' : '' }}"><a class="nav-link"
+                    href="{{ route('slider.index') }}">
                     <i class="far fa-square"></i>
                     <span>Slider</span>
                 </a>
             </li>
-
+            <li class="{{ Request::routeIs('unit.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('unit.index') }}">
+                    <i class="far fa-square"></i>
+                    <span>Unit Usaha</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>

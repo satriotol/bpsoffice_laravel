@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,8 @@ Route::get('/', [IndexController::class, 'home'])->name('home');
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
     Route::resources([
-        'slider' => SliderController::class
+        'slider' => SliderController::class,
+        'unit' => UnitController::class
     ]);
 });
 
