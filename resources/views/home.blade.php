@@ -2,9 +2,11 @@
 @section('content')
     <section id="hero">
         <div class="owl-carousel">
-            <div><img class="owl-carousel-img" src="{{ asset('1.png') }}" alt=""></div>
-            <div><img class="owl-carousel-img" src="{{ asset('2.jpg') }}" alt=""></div>
-        </div>
+            @foreach ($sliders as $slider)
+                <div>
+                    <img class="owl-carousel-img" src="{{ $slider->image }}" alt="">
+                </div>
+            @endforeach
     </section>
     <main id="main">
         <!-- ======= Services Section ======= -->
