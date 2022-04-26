@@ -68,8 +68,13 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     @stack('script')
     <script>
-        $(document).ready(function() {
-            $('#summernote').summernote({
+        $('.summernote').each(function(i, obj) {
+            $(obj).summernote({
+                onblur: function(e) {
+                    var id = $(obj).data('id');
+                    var sHTML = $(obj).code();
+                    alert(sHTML);
+                },
                 toolbar: [
                     ['font', ['bold', 'underline', 'clear']],
                     ['para', ['ol', 'paragraph']],

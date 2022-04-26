@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CarrierController;
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
         'partner' => PartnerController::class,
         'about' => AboutController::class,
         'gallery' => GalleryController::class,
+        'carrier' => CarrierController::class,
     ]);
 });
 

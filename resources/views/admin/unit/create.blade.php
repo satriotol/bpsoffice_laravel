@@ -28,7 +28,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Deskripsi</label>
-                                <textarea name="description" id="summernote" cols="30" rows="10"
+                                <textarea name="description" class="summernote" cols="30" rows="10"
                                     required>{{ isset($unit) ? $unit->description : '' }}</textarea>
                             </div>
                             <div class="form-group">

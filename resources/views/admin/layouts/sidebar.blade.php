@@ -39,9 +39,15 @@
                 </a>
             </li>
             <li class="{{ Request::routeIs('gallery.*') ? 'active' : '' }}"><a class="nav-link"
-                href="{{ route('gallery.index') }}">
+                    href="{{ route('gallery.index') }}">
+                    <i class="far fa-square"></i>
+                    <span>Galeri</span>
+                </a>
+            </li>
+            <li class="{{ Request::routeIs('carrier.*') ? 'active' : '' }}"><a class="nav-link"
+                href="{{ route('carrier.index') }}">
                 <i class="far fa-square"></i>
-                <span>Galeri</span>
+                <span>Karir</span>
             </a>
         </li>
         </ul>
