@@ -38,6 +38,12 @@
                     <span>Tentang</span>
                 </a>
             </li>
+            <li class="{{ Request::routeIs('gallery.*') ? 'active' : '' }}"><a class="nav-link"
+                href="{{ route('gallery.index') }}">
+                <i class="far fa-square"></i>
+                <span>Galeri</span>
+            </a>
+        </li>
         </ul>
     </aside>
 </div>

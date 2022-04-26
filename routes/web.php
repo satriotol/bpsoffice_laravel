@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UnitController;
@@ -28,6 +29,7 @@ Route::middleware(['auth'])->group(function () {
         'unit' => UnitController::class,
         'partner' => PartnerController::class,
         'about' => AboutController::class,
+        'gallery' => GalleryController::class,
     ]);
 });
 
