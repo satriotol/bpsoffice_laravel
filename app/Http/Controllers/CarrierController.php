@@ -86,8 +86,10 @@ class CarrierController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Carrier $carrier)
     {
-        //
+        $carrier->delete();
+        session()->flash('success');
+        return redirect(route('carrier.index'));
     }
 }

@@ -9,59 +9,82 @@
             @endforeach
     </section>
     <main id="main">
-        <!-- ======= Services Section ======= -->
-        <section id="services" class="services section-bg">
+        <section id="features" class="features pt-0">
             <div class="container">
-
-                <div class="section-title" data-aos="fade-up">
+                <div class="section-title aos-init aos-animate" data-aos="fade-up">
                     <h2>Unit</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                        fugiat sit in iste officiis commodi quidem hic quas.</p>
                 </div>
-
                 <div class="row">
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
-                        <div class="card">
-                            <img class="card-img-top" src="{{ asset('1.png') }}" alt="Card image cap">
-                            <div class="card-body text-center">
-                                <h5 class="title">Card title</h5>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
+                    <div class="col-lg-6 mt-2 mb-tg-0 order-2 order-lg-1">
+                        <ul class="nav nav-tabs flex-column">
+                            @foreach ($units as $unit)
+                                @if ($loop->first)
+                                    <li class="nav-item" data-aos="fade-up">
+                                        <a class="nav-link active show" data-bs-toggle="tab" href="#tab-{{ $unit->id }}">
+                                            <h4>{{ $unit->name }}</h4>
+                                            <p>{{ $unit->address }}</p>
+                                            <div style="text-align: right" class="pricing mt-2">
+                                                <p href="" class="btn-buy">Kunjungi <i
+                                                        class="fa-solid fa-arrow-right"></i></p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                @else
+                                    <li class="nav-item" data-aos="fade-up">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#tab-{{ $unit->id }}">
+                                            <h4>{{ $unit->name }}</h4>
+                                            <p>{{ $unit->address }}</p>
+                                            <div style="text-align: right" class="pricing mt-2">
+                                                <p href="" class="btn-buy">Kunjungi <i
+                                                        class="fa-solid fa-arrow-right"></i></p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in">
+                        <div class="tab-content">
+                            @foreach ($units as $unit)
+                                @if ($loop->first)
+                                    <div class="tab-pane active show" id="tab-{{ $unit->id }}">
+                                        <figure>
+                                            <img src="{{ $unit->image }}" alt="" class="img-fluid">
+                                        </figure>
+                                    </div>
+                                @else
+                                    <div class="tab-pane" id="tab-{{ $unit->id }}">
+                                        <figure>
+                                            <img src="{{ $unit->image }}" alt="" class="img-fluid">
+                                        </figure>
+                                    </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
-                        <div class="card">
-                            <img class="card-img-top" src="{{ asset('2.jpg') }}" alt="Card image cap">
-                            <div class="card-body text-center">
-                                <h5 class="title">Card title</h5>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
-                        <div class="card">
-                            <img class="card-img-top" src="{{ asset('1.png') }}" alt="Card image cap">
-                            <div class="card-body text-center">
-                                <h5 class="title">Card title</h5>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in">
-                        <div class="card">
-                            <img class="card-img-top" src="{{ asset('1.png') }}" alt="Card image cap">
-                            <div class="card-body text-center">
-                                <h5 class="title">Card title</h5>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
             </div>
-        </section><!-- End Services Section -->
+        </section>
+        <section id="clients" class="clients">
+            <div class="container">
+                <div class="section-title aos-init aos-animate" data-aos="fade-up">
+                    <h2>Partner</h2>
+                </div>
+                <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
+                    @foreach ($partners as $partner)
+                        <div class="col-lg-3 col-md-4 col-xs-6">
+                            <div class="client-logo aos-init aos-animate" data-aos="zoom-in">
+                                <a href="{{ $partner->url }}" class="text-center" target="_blank">
+                                    <img src="{{ $partner->image }}" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
     </main>
 @endsection
 @push('style')
