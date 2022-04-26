@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\AdminController;
@@ -23,7 +24,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
     Route::resources([
         'slider' => SliderController::class,
-        'unit' => UnitController::class
+        'unit' => UnitController::class,
+        'partner' => PartnerController::class,
     ]);
 });
 

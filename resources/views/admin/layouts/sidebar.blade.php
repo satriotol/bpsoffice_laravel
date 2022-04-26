@@ -8,7 +8,8 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Admin Area</li>
-            <li class="{{ Request::routeIs('admin') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin') }}">
+            <li class="{{ Request::routeIs('admin') ? 'active' : '' }}"><a class="nav-link"
+                    href="{{ route('admin') }}">
                     <i class="far fa-square"></i>
                     <span>Dashboard</span>
                 </a>
@@ -19,9 +20,16 @@
                     <span>Slider</span>
                 </a>
             </li>
-            <li class="{{ Request::routeIs('unit.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('unit.index') }}">
+            <li class="{{ Request::routeIs('unit.*') ? 'active' : '' }}"><a class="nav-link"
+                    href="{{ route('unit.index') }}">
                     <i class="far fa-square"></i>
                     <span>Unit Usaha</span>
+                </a>
+            </li>
+            <li class="{{ Request::routeIs('partner.*') ? 'active' : '' }}"><a class="nav-link"
+                    href="{{ route('partner.index') }}">
+                    <i class="far fa-square"></i>
+                    <span>Partner</span>
                 </a>
             </li>
         </ul>
