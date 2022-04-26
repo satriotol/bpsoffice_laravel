@@ -15,7 +15,7 @@
                     </div>
                     <div class="card-body">
                         <form
-                            action="@isset($slider) {{ route('sliders.update', $slider->id) }} @endisset @empty($slider) {{ route('sliders.store') }} @endempty"
+                            action="@isset($slider) {{ route('slider.update', $slider->id) }} @endisset @empty($slider) {{ route('slider.store') }} @endempty"
                             method="POST" enctype="multipart/form-data">
                             @csrf
                             @isset($slider)

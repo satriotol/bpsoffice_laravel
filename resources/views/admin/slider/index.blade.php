@@ -10,31 +10,26 @@
             <div class="card-header">
                 <h4>Slider Table</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('sliders.create') }}" class="badge badge-primary">Create</a>
+                    <a href="{{ route('slider.create') }}" class="badge badge-primary">Create</a>
                 </div>
             </div>
             <div class="card-body">
                 <table id="myTable" class="display">
                     <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Description</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($sliders as $Slider)
+                        @foreach ($sliders as $slider)
                             <tr>
-                                <td>{{ $Slider->title }}</td>
-                                <td>{{ $Slider->description }}</td>
-                                <td><img src="{{ $Slider->image }}" class="img-fluid" style="height: 100px" alt="">
+                                <td><img src="{{ $slider->image }}" class="img-fluid" style="height: 100px" alt="">
                                 </td>
                                 <td>
-                                    <a href="{{ route('sliders.edit', $Slider->id) }}" class="btn btn-warning">
+                                    <a href="{{ route('slider.edit', $slider->id) }}" class="btn btn-warning">
                                         Edit
                                     </a>
-                                    <form action="{{ route('sliders.destroy', $Slider->id) }}" method="POST"
+                                    <form action="{{ route('slider.destroy', $slider->id) }}" method="POST"
                                         class="d-inline">
                                         @csrf
                                         @method('DELETE')

@@ -17,6 +17,11 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('assets_admin/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets_admin/css/components.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css"
+        integrity="sha512-DIW4FkYTOxjCqRt7oS9BFO+nVOwDL4bzukDyDtMO7crjUZhwpyrWBFroq+IqRe6VnJkTpRAS6nhDvf0w+wHmxg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -46,6 +51,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="{{ asset('assets_admin/js/stisla.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"
+        integrity="sha512-Zq9o+E00xhhR/7vJ49mxFNJ0KQw1E1TMWkPTxrWcnpfEFDEXgUiwJHIKit93EW/XxE31HSI5GEOW06G6BF1AtA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- JS Libraies -->
 
@@ -54,6 +62,14 @@
     <script src="{{ asset('assets_admin/js/custom.js') }}"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js">
     </script>
+    @if (session()->has('success'))
+        <script>
+            iziToast.success({
+                title: 'OK',
+                message: 'Successfully',
+            });
+        </script>
+    @endif
     <script>
         $(document).ready(function() {
             $('#myTable').DataTable();

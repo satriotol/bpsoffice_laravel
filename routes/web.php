@@ -19,9 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [IndexController::class, 'home'])->name('home');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
     Route::resources([
-        'sliders' => SliderController::class
+        'slider' => SliderController::class
     ]);
 });
 

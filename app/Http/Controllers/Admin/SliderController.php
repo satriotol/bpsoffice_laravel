@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Slider\CreateSliderRequest;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 
@@ -35,9 +36,16 @@ class SliderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateSliderRequest $request)
     {
-        //
+        $data = $request->all();
+        if ($request->hasFile('image')) {
+            $image = $request->image->store('image', 'public');
+            $data['image'] = $image;
+        };
+        Slider::create($data);
+        session()->flash('success');
+        return redirect(route('slider.index'));
     }
 
     /**
@@ -57,9 +65,9 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Slider $slider)
     {
-        //
+        return view('admin.slider.create', compact('slider'));
     }
 
     /**
@@ -69,9 +77,17 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateSliderRequest $request, Slider $slider)
     {
-        //
+        $data = $request->all();
+        if ($request->hasFile('image')) {
+            $image = $request->image->store('image', 'public');
+            $slider->deleteImage();
+            $data['image'] = $image;
+        };
+        $slider->update($data);
+        session()->flash('success');
+        return redirect(route('slider.index'));
     }
 
     /**
@@ -80,8 +96,11 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Slider $slider)
     {
-        //
+        $slider->deleteImage();
+        $slider->delete();
+        session()->flash('success');
+        return redirect(route('slider.index'));
     }
 }

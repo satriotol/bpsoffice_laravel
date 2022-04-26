@@ -38,6 +38,7 @@
     <link href="assets/css/style.css" rel="stylesheet">
     @stack('style')
 
+
     <!-- =======================================================
   * Template Name: Scaffold - v4.7.0
   * Template URL: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/
@@ -95,7 +96,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
