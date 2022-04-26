@@ -13,7 +13,7 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li class="active"><a class="nav-link" href="{{ route('slider.index') }}">
+            <li><a class="nav-link" href="{{ route('slider.index') }}">
                     <i class="far fa-square"></i>
                     <span>Slider</span>
                 </a>
