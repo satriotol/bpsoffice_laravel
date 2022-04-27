@@ -24,7 +24,10 @@ class CreateAboutRequest extends FormRequest
     public function rules()
     {
         return [
-            
+            'description' => 'required',
+            'investation' => 'required',
+            'lat' => 'required',
+            'lng' => 'required',
         ];
     }
 }

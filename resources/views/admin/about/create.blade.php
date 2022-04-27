@@ -40,6 +40,11 @@
                                     required>{{ isset($about) ? $about->description : '' }}</textarea>
                             </div>
                             <div class="form-group">
+                                <label>Keterangan Investasi</label>
+                                <textarea name="investation" class="summernote" cols="30" rows="10"
+                                    required>{{ isset($about) ? $about->investation : '' }}</textarea>
+                            </div>
+                            <div class="form-group">
                                 <label>Location</label>
                                 <div id="map"></div>
                                 <div class="form-row">
@@ -76,8 +81,10 @@
             setView: true,
         });
         var lat, lng, marker;
+        @isset($about)
         var old_lat = {{$about->lat}};
         var old_lng = {{$about->lng}};
+        @endisset
         var greenIcon = new L.Icon({
             iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
             shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
