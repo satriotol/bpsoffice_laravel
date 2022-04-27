@@ -18,7 +18,8 @@
             <div class="card-body">
                 <table id="myTable" class="display">
                     <thead>
-                        <th>Nama</th>
+                        <th>Deskripsi</th>
+                        <th>Investasi</th>
                         <th>Latitude</th>
                         <th>Longtitude</th>
                         <th>Action</th>
@@ -28,6 +29,7 @@
                         @foreach ($abouts as $about)
                             <tr>
                                 <td>{!! $about->description !!}</td>
+                                <td>{!! $about->investation !!}</td>
                                 <td>{{ $about->lat }}</td>
                                 <td>{{ $about->lng }}</td>
                                 <td>

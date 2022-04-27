@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Partner;
 use App\Models\Slider;
 use App\Models\Unit;
@@ -14,6 +15,7 @@ class IndexController extends Controller
         $sliders = Slider::all();
         $units = Unit::all();
         $partners = Partner::all();
-        return view('home', compact('sliders', 'units', 'partners'));
+        $about = About::first();
+        return view('home', compact('sliders', 'units', 'partners', 'about'));
     }
 }
