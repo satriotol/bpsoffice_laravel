@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [IndexController::class, 'home'])->name('home');
 Route::get('/detail_unit/{unit}', [IndexController::class, 'detail_unit'])->name('detail_unit');
 Route::get('/galleries', [IndexController::class, 'galleries'])->name('galleries');
+Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'admin'])->name('admin');

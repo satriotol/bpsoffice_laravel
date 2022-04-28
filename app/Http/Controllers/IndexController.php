@@ -29,4 +29,9 @@ class IndexController extends Controller
         $galleries = Gallery::all();
         return view('gallery', compact('galleries'));
     }
+    public function contact()
+    {
+        $about = About::first();
+        return view('contact', compact('about'));
+    }
 }

@@ -13,7 +13,7 @@
                         href="{{ route('home') }}">Beranda</a></li>
                 <li><a class="nav-link {{ Request::routeIs('galleries') ? 'active' : '' }}"
                         href="{{ route('galleries') }}">Gallery</a></li>
-                <li><a class="nav-link">Kontak</a></li>
+                <li><a class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Kontak</a></li>
                 <li><a class="nav-link">Investasi</a></li>
                 <li><a class="nav-link">Karir</a></li>
                 <li><a class="nav-link">FPKK 01</a></li>
