@@ -15,7 +15,7 @@
     <main id="main" style="padding: 60px 0px">
         <div class="jumbotron jumbotron-fluid" style="padding: 120px 0px">
         </div>
-        <section class="gallery mt-3">
+        <section class="gallery">
             <div class="container">
                 <div class="section-title aos-init aos-animate" data-aos="fade-up">
                     <h2>Galeri</h2>

@@ -57,16 +57,43 @@
     @yield('content')
 
     <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-info">
+                            <img src="{{ asset('logo.png') }}" class="img-fluid" alt="">
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic magnam beatae et autem
+                                voluptatibus ad culpa omnis earum in praesentium.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}">Beranda</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('galleries') }}">Galeri</a>
+                            </li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('contact') }}">Kontak</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Investasi</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Karir</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-6 footer-newsletter">
+                        <iframe
+                            src="https://maps.google.com/maps?q={{ $about->lat }},{{ $about->lng }}&amp;output=embed"
+                            frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen="">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="copyright">
                 &copy; Copyright <strong><span>Pemkot Semarang</span></strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/ -->
-                {{-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> --}}
             </div>
         </div>
     </footer><!-- End Footer -->
