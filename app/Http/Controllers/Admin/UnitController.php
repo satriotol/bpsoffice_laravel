@@ -44,6 +44,25 @@ class UnitController extends Controller
             $image = $request->image->store('image', 'public');
             $data['image'] = $image;
         };
+        $description = $data['description'];
+        $dom = new \DomDocument();
+        $dom->loadHtml($description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $imageFile = $dom->getElementsByTagName('imageFile');
+
+        foreach ($imageFile as $item => $image) {
+            $data = $image->getAttribute('src');
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+            $imgeData = base64_decode($data);
+            $image_name = "/upload/" . time() . $item . '.png';
+            $path = public_path() . $image_name;
+            file_put_contents($path, $imgeData);
+
+            $image->removeAttribute('src');
+            $image->setAttribute('src', $image_name);
+        }
+
+        $description = $dom->saveHTML();
         Unit::create($data);
         session()->flash('success');
         return redirect(route('unit.index'));
@@ -86,7 +105,27 @@ class UnitController extends Controller
             $unit->deleteImage();
             $data['image'] = $image;
         };
+        $description = $data['description'];
+        $dom = new \DomDocument();
+        $dom->loadHtml($description, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $imageFile = $dom->getElementsByTagName('imageFile');
+
+        foreach ($imageFile as $item => $image) {
+            $data = $image->getAttribute('src');
+            list($type, $data) = explode(';', $data);
+            list(, $data)      = explode(',', $data);
+            $imgeData = base64_decode($data);
+            $image_name = "/upload/" . time() . $item . '.png';
+            $path = public_path() . $image_name;
+            file_put_contents($path, $imgeData);
+
+            $image->removeAttribute('src');
+            $image->setAttribute('src', $image_name);
+        }
+
+        $description = $dom->saveHTML();
         $unit->update($data);
+
         session()->flash('success');
         return redirect(route('unit.index'));
     }

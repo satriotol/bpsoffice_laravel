@@ -75,10 +75,6 @@
                     var sHTML = $(obj).code();
                     alert(sHTML);
                 },
-                toolbar: [
-                    ['font', ['bold', 'underline', 'clear']],
-                    ['para', ['ol', 'paragraph']],
-                ],
             });
         });
     </script>

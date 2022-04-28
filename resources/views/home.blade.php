@@ -9,7 +9,24 @@
             @endforeach
     </section>
     <main id="main">
-        <section id="features" class="features pt-0">
+        <section id="about" class="about pt-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in">
+                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 d-flex flex-column justify-contents-center aos-init aos-animate"
+                        data-aos="fade-left">
+                        <div class="content pt-4 pt-lg-0">
+                            <h3>Tentang Kami</h3>
+                            {!! $about->description !!}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section id="features" class="features">
             <div class="container">
                 <div class="section-title aos-init aos-animate" data-aos="fade-up">
                     <h2>Unit</h2>
@@ -20,13 +37,11 @@
                             @foreach ($units as $unit)
                                 @if ($loop->first)
                                     <li class="nav-item" data-aos="fade-up">
-                                        <a class="nav-link active show" data-bs-toggle="tab" href="#tab-{{ $unit->id }}">
+                                        <a class="nav-link active show" data-bs-toggle="tab"
+                                            href="#tab-{{ $unit->id }}">
                                             <h4>{{ $unit->name }}</h4>
                                             <p>{{ $unit->address }}</p>
-                                            <div style="text-align: right" class="pricing mt-2">
-                                                <p href="" class="btn-buy">Kunjungi <i
-                                                        class="fa-solid fa-arrow-right"></i></p>
-                                            </div>
+
                                         </a>
                                     </li>
                                 @else
@@ -34,10 +49,6 @@
                                         <a class="nav-link" data-bs-toggle="tab" href="#tab-{{ $unit->id }}">
                                             <h4>{{ $unit->name }}</h4>
                                             <p>{{ $unit->address }}</p>
-                                            <div style="text-align: right" class="pricing mt-2">
-                                                <p href="" class="btn-buy">Kunjungi <i
-                                                        class="fa-solid fa-arrow-right"></i></p>
-                                            </div>
                                         </a>
                                     </li>
                                 @endif
@@ -64,7 +75,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
         <section id="cta" class="cta">

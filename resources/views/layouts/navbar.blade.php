@@ -9,9 +9,10 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="nav-link active">Home</a></li>
-                <li><a class="nav-link">Tentang Kami</a></li>
-                <li><a class="nav-link">Gallery</a></li>
+                <li><a class="nav-link {{ Request::routeIs('home') ? 'active' : '' }}"
+                        href="{{ route('home') }}">Beranda</a></li>
+                <li><a class="nav-link {{ Request::routeIs('galleries') ? 'active' : '' }}"
+                        href="{{ route('galleries') }}">Gallery</a></li>
                 <li><a class="nav-link">Kontak</a></li>
                 <li><a class="nav-link">Investasi</a></li>
                 <li><a class="nav-link">Karir</a></li>
