@@ -28,7 +28,8 @@ class IndexController extends Controller
 
     public function detail_unit(Unit $unit)
     {
-        return view('detail_unit', compact('unit'));
+        $units = Unit::all();
+        return view('detail_unit', compact('unit', 'units'));
     }
     public function galleries()
     {
