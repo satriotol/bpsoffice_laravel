@@ -41,6 +41,25 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     @stack('style')
+    <style>
+        .btn-primary-custom {
+            font-family: "Raleway", sans-serif;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 4px;
+            transition: 0.5s;
+            color: #fff;
+            background: #009cea;
+        }
+
+        .btn-primary-custom:hover {
+            background: #008bd1;
+        }
+
+    </style>
 
 
     <!-- =======================================================
@@ -61,7 +80,7 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <div class="footer-info">
                             <img src="{{ asset('logo.png') }}" class="img-fluid" alt="">
                             <p>
@@ -71,8 +90,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Navigasi</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}">Beranda</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('galleries') }}">Galeri</a>
@@ -82,12 +101,12 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Karir</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-md-6 footer-newsletter">
+                    {{-- <div class="col-lg-6 col-md-6 footer-newsletter">
                         <iframe
                             src="https://maps.google.com/maps?q={{ $about->lat }},{{ $about->lng }}&amp;output=embed"
                             frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen="">
                         </iframe>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

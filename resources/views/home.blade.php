@@ -37,19 +37,26 @@
                             @foreach ($units as $unit)
                                 @if ($loop->first)
                                     <li class="nav-item" data-aos="fade-up">
-                                        <a class="nav-link active show" data-bs-toggle="tab"
+                                        <div class="nav-link active show" data-bs-toggle="tab"
                                             href="#tab-{{ $unit->id }}">
                                             <h4>{{ $unit->name }}</h4>
                                             <p>{{ $unit->address }}</p>
-
-                                        </a>
+                                            <div style="text-align: right">
+                                                <a href="{{ route('detail_unit', $unit->id) }}"
+                                                    class="btn-primary-custom">Kunjungi</a>
+                                            </div>
+                                        </div>
                                     </li>
                                 @else
                                     <li class="nav-item" data-aos="fade-up">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#tab-{{ $unit->id }}">
+                                        <div class="nav-link" data-bs-toggle="tab" href="#tab-{{ $unit->id }}">
                                             <h4>{{ $unit->name }}</h4>
                                             <p>{{ $unit->address }}</p>
-                                        </a>
+                                            <div style="text-align: right">
+                                                <a href="{{ route('detail_unit', $unit->id) }}"
+                                                    class="btn-primary-custom">Kunjungi</a>
+                                            </div>
+                                        </div>
                                     </li>
                                 @endif
                             @endforeach

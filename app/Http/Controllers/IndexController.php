@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+    public function __construct()
+    {
+        $about = About::first();
+        view()->share('about', $about);
+    }
+
     public function home()
     {
         $sliders = Slider::all();
