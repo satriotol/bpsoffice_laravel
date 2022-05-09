@@ -40,7 +40,7 @@ class SliderController extends Controller
     {
         $data = $request->all();
         if ($request->hasFile('image')) {
-            $image = $request->image->store('image', 'public');
+            $image = $request->image->store('image', 'public_uploads');
             $data['image'] = $image;
         };
         Slider::create($data);
@@ -81,7 +81,7 @@ class SliderController extends Controller
     {
         $data = $request->all();
         if ($request->hasFile('image')) {
-            $image = $request->image->store('image', 'public');
+            $image = $request->image->store('image', 'public_uploads');
             $slider->deleteImage();
             $data['image'] = $image;
         };

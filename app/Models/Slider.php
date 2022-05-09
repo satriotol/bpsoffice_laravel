@@ -11,12 +11,8 @@ class Slider extends Model
     use HasFactory;
     protected $fillable = ['image'];
 
-    public function getImageAttribute($value)
-    {
-        return url('storage/' . $value);
-    }
     public function deleteImage()
     {
-        Storage::disk('public')->delete($this->attributes['image']);
+        Storage::disk('public_uploads')->delete($this->attributes['image']);
     }
 }

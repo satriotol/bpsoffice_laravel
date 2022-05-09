@@ -23,7 +23,7 @@
                     <tbody>
                         @foreach ($sliders as $slider)
                             <tr>
-                                <td><img src="{{ $slider->image }}" class="img-fluid" style="height: 100px" alt="">
+                                <td><img src="{{ asset('uploads/'.$slider->image) }}" class="img-fluid" style="height: 100px" alt="">
                                 </td>
                                 <td>
                                     <a href="{{ route('slider.edit', $slider->id) }}" class="btn btn-warning">
