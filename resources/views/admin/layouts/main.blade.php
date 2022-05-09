@@ -15,7 +15,7 @@
     <!-- CSS Libraries -->
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="{{ asset('assets_admin/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets_admin/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets_admin/css/components.css') }}">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
