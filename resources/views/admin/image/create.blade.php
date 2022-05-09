@@ -39,21 +39,21 @@
                                 <input type="file" name="image_gallery" class="form-control" accept="image/*">
                             </div>
                             @isset($image)
-                                <img src="{{ $image->image_gallery }}" style="height: 100px" alt="">
+                                <img src="{{ asset('uploads/' . $image->image_gallery) }}" style="height: 100px" alt="">
                             @endisset
                             <div class="form-group">
                                 <label>Gambar Kontak</label>
                                 <input type="file" name="image_contact" class="form-control" accept="image/*">
                             </div>
                             @isset($image)
-                                <img src="{{ $image->image_contact }}" style="height: 100px" alt="">
+                                <img src="{{ asset('uploads/' . $image->image_contact) }}" style="height: 100px" alt="">
                             @endisset
                             <div class="form-group">
                                 <label>Gambar Karir</label>
                                 <input type="file" name="image_carrier" class="form-control" accept="image/*">
                             </div>
                             @isset($image)
-                                <img src="{{ $image->image_carrier }}" style="height: 100px" alt="">
+                                <img src="{{ asset('uploads/' . $image->image_carrier) }}" style="height: 100px" alt="">
                             @endisset
                             <div class="text-right">
                                 <input type="submit" class="btn btn-primary" value="Submit">

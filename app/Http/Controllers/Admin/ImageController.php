@@ -41,15 +41,15 @@ class ImageController extends Controller
     {
         $data = $request->all();
         if ($request->hasFile('image_gallery')) {
-            $image_gallery = $request->image_gallery->store('image_gallery', 'public');
+            $image_gallery = $request->image_gallery->store('image', 'public_uploads');
             $data['image_gallery'] = $image_gallery;
         };
         if ($request->hasFile('image_contact')) {
-            $image_contact = $request->image_contact->store('image_contact', 'public');
+            $image_contact = $request->image_contact->store('image', 'public_uploads');
             $data['image_contact'] = $image_contact;
         };
         if ($request->hasFile('image_carrier')) {
-            $image_carrier = $request->image_carrier->store('image_carrier', 'public');
+            $image_carrier = $request->image_carrier->store('image', 'public_uploads');
             $data['image_carrier'] = $image_carrier;
         };
         Image::create($data);
@@ -90,17 +90,17 @@ class ImageController extends Controller
     {
         $data = $request->all();
         if ($request->hasFile('image_gallery')) {
-            $image_gallery = $request->image_gallery->store('image_gallery', 'public');
+            $image_gallery = $request->image_gallery->store('image', 'public_uploads');
             $image->deleteImageGallery();
             $data['image_gallery'] = $image_gallery;
         };
         if ($request->hasFile('image_contact')) {
-            $image_contact = $request->image_contact->store('image_contact', 'public');
+            $image_contact = $request->image_contact->store('image', 'public_uploads');
             $image->deleteImageContact();
             $data['image_contact'] = $image_contact;
         };
         if ($request->hasFile('image_carrier')) {
-            $image_carrier = $request->image_carrier->store('image_carrier', 'public');
+            $image_carrier = $request->image_carrier->store('image', 'public_uploads');
             $image->deleteImageCarrier();
             $data['image_carrier'] = $image_carrier;
         };

@@ -12,28 +12,16 @@ class Image extends Model
 
     protected $fillable = ['image_gallery', 'image_contact', 'image_carrier'];
 
-    public function getImageGalleryAttribute($value)
-    {
-        return url('storage/' . $value);
-    }
     public function deleteImageGallery()
     {
-        Storage::disk('public')->delete($this->attributes['image_gallery']);
-    }
-    public function getImageContactAttribute($value)
-    {
-        return url('storage/' . $value);
+        Storage::disk('public_uploads')->delete($this->attributes['image_gallery']);
     }
     public function deleteImageContact()
     {
-        Storage::disk('public')->delete($this->attributes['image_contact']);
-    }
-    public function getImageCarrierAttribute($value)
-    {
-        return url('storage/' . $value);
+        Storage::disk('public_uploads')->delete($this->attributes['image_contact']);
     }
     public function deleteImageCarrier()
     {
-        Storage::disk('public')->delete($this->attributes['image_carrier']);
+        Storage::disk('public_uploads')->delete($this->attributes['image_carrier']);
     }
 }

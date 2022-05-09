@@ -2,7 +2,7 @@
 @push('style')
     <style>
         .jumbotron {
-            background: url("{{ $image->image_gallery }}") rgba(0, 156, 234, 0.7);
+            background: url("{{ asset('uploads/' . $image->image_gallery) }}") rgba(0, 156, 234, 0.7);
             background-size: cover;
             background-position: center;
             background-blend-mode: multiply;
@@ -23,8 +23,8 @@
                 <div class="row">
                     @foreach ($galleries as $gallery)
                         <div class="col-md-4 mb-2">
-                            <a href="{{ $gallery->image }}" class="glightbox">
-                                <img src="{{ $gallery->image }}" style="height: 100%"
+                            <a href="{{ asset('uploads/' . $gallery->image) }}" class="glightbox">
+                                <img src="{{ asset('uploads/' . $gallery->image) }}" style="height: 100%"
                                     class="img-fluid aos-init aos-animate" data-aos="zoom-in">
                             </a>
                         </div>

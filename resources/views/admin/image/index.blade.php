@@ -27,9 +27,12 @@
                     <tbody>
                         @foreach ($images as $image)
                             <tr>
-                                <td><img src="{{ $image->image_gallery }}" class="img-fluid" alt=""></td>
-                                <td><img src="{{ $image->image_contact }}" class="img-fluid" alt=""></td>
-                                <td><img src="{{ $image->image_carrier }}" class="img-fluid" alt=""></td>
+                                <td><img src="{{ asset('uploads/' . $image->image_gallery) }}" class="img-fluid" alt="">
+                                </td>
+                                <td><img src="{{ asset('uploads/' . $image->image_contact) }}" class="img-fluid" alt="">
+                                </td>
+                                <td><img src="{{ asset('uploads/' . $image->image_carrier) }}" class="img-fluid" alt="">
+                                </td>
                                 <td>
                                     <a href="{{ route('image.edit', $image->id) }}" class="btn btn-warning">
                                         Edit

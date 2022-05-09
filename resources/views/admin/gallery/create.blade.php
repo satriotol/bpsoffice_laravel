@@ -24,16 +24,14 @@
                             <div class="form-group">
                                 <label>Image</label>
                                 <input type="file"
-                                    @if (isset($gallery)) 
-                                    name="image"    
+                                    @if (isset($gallery)) name="image"    
                                     @else
                                     multiple
-                                    name="image[]" 
-                                    @endif
+                                    name="image[]" @endif
                                     class="form-control" accept="image/*">
                             </div>
                             @isset($gallery)
-                                <img src="{{ $gallery->image }}" style="height: 100px" alt="">
+                                <img src="{{ asset('uploads/' . $gallery->image) }}" style="height: 100px" alt="">
                             @endisset
                             <div class="text-right">
                                 <input type="submit" class="btn btn-primary" value="Submit">
