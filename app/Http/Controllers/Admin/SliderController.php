@@ -16,6 +16,7 @@ class SliderController extends Controller
      */
     public function index()
     {
+        // dd(env('APP_URL') . '/public/storage');
         $sliders = Slider::all();
         return view('admin.slider.index', compact('sliders'));
     }

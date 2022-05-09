@@ -23,6 +23,7 @@
                     <tbody>
                         @foreach ($sliders as $slider)
                             <tr>
+                                {{$slider->image}}
                                 <td><img src="{{ $slider->image }}" class="img-fluid" style="height: 100px" alt="">
                                 </td>
                                 <td>
