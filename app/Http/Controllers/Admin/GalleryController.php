@@ -42,7 +42,7 @@ class GalleryController extends Controller
         $data = $request->all();
         if ($request->hasFile('image')) {
             foreach ($request->file('image') as $img) {
-                $image = $img->store('image', 'public');
+                $image = $img->store('image', 'public_uploads');
                 $data['image'] = $image;
                 Gallery::create($data);
             }
@@ -84,7 +84,7 @@ class GalleryController extends Controller
     {
         $data = $request->all();
         if ($request->hasFile('image')) {
-            $image = $request->image->store('image', 'public');
+            $image = $request->image->store('image', 'public_uploads');
             $gallery->deleteImage();
             $data['image'] = $image;
         };

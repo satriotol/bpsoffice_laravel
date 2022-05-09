@@ -23,7 +23,7 @@
                     <tbody>
                         @foreach ($galleries as $gallery)
                             <tr>
-                                <td><img src="{{ $gallery->image }}" class="img-fluid" style="height: 100px" alt="">
+                                <td><img src="{{ asset('uploads/' . $gallery->image) }}" class="img-fluid" style="height: 100px" alt="">
                                 </td>
                                 <td>
                                     <a href="{{ route('gallery.edit', $gallery->id) }}" class="btn btn-warning">

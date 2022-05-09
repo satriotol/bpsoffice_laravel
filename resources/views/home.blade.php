@@ -4,7 +4,7 @@
         <div class="owl-carousel">
             @foreach ($sliders as $slider)
                 <div>
-                    <img class="owl-carousel-img" src="{{ $slider->image }}" alt="">
+                    <img class="owl-carousel-img" src="{{ asset('uploads/' . $slider->image) }}" alt="">
                 </div>
             @endforeach
     </section>
