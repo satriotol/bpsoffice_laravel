@@ -44,6 +44,12 @@
                     <span>Galeri</span>
                 </a>
             </li>
+            <li class="{{ Request::routeIs('image.*') ? 'active' : '' }}"><a class="nav-link"
+                    href="{{ route('image.index') }}">
+                    <i class="fas fa-images"></i>
+                    <span>Gambar Slider Menu</span>
+                </a>
+            </li>
             <li class="{{ Request::routeIs('carrier.*') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('carrier.index') }}">
                     <i class="fas fa-briefcase"></i>

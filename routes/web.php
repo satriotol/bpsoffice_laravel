@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UnitController;
@@ -30,12 +31,13 @@ Route::get('/karir', [IndexController::class, 'karir'])->name('karir');
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
     Route::resources([
-        'slider' => SliderController::class,
-        'unit' => UnitController::class,
-        'partner' => PartnerController::class,
-        'about' => AboutController::class,
-        'gallery' => GalleryController::class,
-        'carrier' => CarrierController::class,
+        '/admin/slider' => SliderController::class,
+        '/admin/unit' => UnitController::class,
+        '/admin/partner' => PartnerController::class,
+        '/admin/about' => AboutController::class,
+        '/admin/gallery' => GalleryController::class,
+        '/admin/carrier' => CarrierController::class,
+        '/admin/image' => ImageController::class,
     ]);
 });
 
