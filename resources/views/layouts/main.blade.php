@@ -80,17 +80,22 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="footer-info">
                             <img src="{{ asset('logo.png') }}" class="img-fluid" alt="">
-                            <p>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic magnam beatae et autem
-                                voluptatibus ad culpa omnis earum in praesentium.
-                            </p>
+                            <div class="address">
+                                <p><i class="bi bi-geo-alt"></i> {{ $about->address }}</p>
+                            </div>
+                            <div class="email">
+                                <p><i class="bi bi-envelope"></i> {{ $about->email }}</p>
+                            </div>
+                            <div class="phone">
+                                <p><i class="bi bi-phone"></i> {{ $about->phone }}</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
+                    <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Navigasi</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}">Beranda</a></li>
@@ -100,7 +105,7 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('karir') }}">Karir</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-md-6 footer-newsletter">
+                    <div class="col-lg-6 col-md-12 footer-newsletter">
                         <iframe
                             src="https://maps.google.com/maps?q={{ $about->lat }},{{ $about->lng }}&amp;output=embed"
                             frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen="">

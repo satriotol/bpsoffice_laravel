@@ -39,6 +39,10 @@ class AboutController extends Controller
     public function store(CreateAboutRequest $request)
     {
         $data = $request->all();
+        if ($request->hasFile('image')) {
+            $image = $request->image->store('image', 'public_uploads');
+            $data['image'] = $image;
+        };
         About::create($data);
         session()->flash('success');
         return redirect(route('about.index'));
@@ -76,6 +80,11 @@ class AboutController extends Controller
     public function update(CreateAboutRequest $request, About $about)
     {
         $data = $request->all();
+        if ($request->hasFile('image')) {
+            $image = $request->image->store('image', 'public_uploads');
+            $about->deleteImage();
+            $data['image'] = $image;
+        };
         $about->update($data);
         session()->flash('success');
         return redirect(route('about.index'));

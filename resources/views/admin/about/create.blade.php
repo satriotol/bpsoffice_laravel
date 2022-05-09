@@ -36,14 +36,36 @@
                             @endisset
                             <div class="form-group">
                                 <label>Deskripsi</label>
-                                <textarea name="description" class="summernote" cols="30" rows="10"
+                                <textarea name="description" class="summernote2" cols="30" rows="10"
                                     required>{{ isset($about) ? $about->description : '' }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label>Keterangan Investasi</label>
-                                <textarea name="investation" class="summernote" cols="30" rows="10"
+                                <textarea name="investation" class="summernote2" cols="30" rows="10"
                                     required>{{ isset($about) ? $about->investation : '' }}</textarea>
                             </div>
+                            <div class="form-group">
+                                <label>Alamat</label>
+                                <input type="text" class="form-control" name="address" required
+                                    value="{{ isset($about) ? $about->address : '' }}">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="text" class="form-control" name="phone" required
+                                    value="{{ isset($about) ? $about->phone : '' }}">
+                            </div>
+                            <div class="form-group">
+                                <label>Alamat</label>
+                                <input type="text" class="form-control" name="email" required
+                                    value="{{ isset($about) ? $about->email : '' }}">
+                            </div>
+                            <div class="form-group">
+                                <label>Image</label>
+                                <input type="file" name="image" class="form-control" accept="image/*">
+                            </div>
+                            @isset($about)
+                                <img src="{{ asset('uploads/' . $about->image) }}" style="height: 100px" alt="">
+                            @endisset
                             <div class="form-group">
                                 <label>Location</label>
                                 <div id="map"></div>
@@ -82,8 +104,8 @@
         });
         var lat, lng, marker;
         @isset($about)
-        var old_lat = {{$about->lat}};
-        var old_lng = {{$about->lng}};
+            var old_lat = {{ $about->lat }};
+            var old_lng = {{ $about->lng }};
         @endisset
         var greenIcon = new L.Icon({
             iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
@@ -116,8 +138,8 @@
             placeholder: 'Search here...',
             geocoder: geocoder
         }).addTo(map);
-        @isset ($about)
-            L.marker([old_lat, old_lng],{
+        @isset($about)
+            L.marker([old_lat, old_lng], {
                 icon: yellowIcon
             }).addTo(map)
         @endif
@@ -141,5 +163,16 @@
             zoomOffset: -1,
             accessToken: 'pk.eyJ1Ijoic2F0cmlvdG9sIiwiYSI6ImNrc3E1YTh0NzAzdWMyb3BicTUxbnMxY3YifQ.XfiYl1qOEFzjRsPs3TDijw'
         }).addTo(map);
+    </script>
+    <script>
+        $('.summernote2').each(function(i, obj) {
+            $(obj).summernote({
+                onblur: function(e) {
+                    var id = $(obj).data('id');
+                    var sHTML = $(obj).code();
+                    alert(sHTML);
+                },
+            });
+        });
     </script>
 @endpush

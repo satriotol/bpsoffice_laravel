@@ -13,7 +13,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in">
-                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                        <img src="{{ 'uploads/' . $about->image }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-contents-center aos-init aos-animate"
                         data-aos="fade-left">

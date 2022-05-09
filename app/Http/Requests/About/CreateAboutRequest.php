@@ -28,6 +28,10 @@ class CreateAboutRequest extends FormRequest
             'investation' => 'required',
             'lat' => 'required',
             'lng' => 'required',
+            'image' => 'required',
+            'phone' => 'required',
+            'email' => 'required|email',
+            'address' => 'required',
         ];
     }
 }
