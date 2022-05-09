@@ -2,7 +2,7 @@
 @push('style')
     <style>
         .jumbotron {
-            background: url("{{ $image->image_carrier }}");
+            background: url("{{ $image->image_carrier }}") rgba(0, 156, 234, 0.7);
             background-size: cover;
             background-position: center;
             background-blend-mode: multiply;
