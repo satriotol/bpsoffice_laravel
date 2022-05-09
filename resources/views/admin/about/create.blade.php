@@ -55,7 +55,7 @@
                                     value="{{ isset($about) ? $about->phone : '' }}">
                             </div>
                             <div class="form-group">
-                                <label>Alamat</label>
+                                <label>Email</label>
                                 <input type="text" class="form-control" name="email" required
                                     value="{{ isset($about) ? $about->email : '' }}">
                             </div>
@@ -167,11 +167,10 @@
     <script>
         $('.summernote2').each(function(i, obj) {
             $(obj).summernote({
-                onblur: function(e) {
-                    var id = $(obj).data('id');
-                    var sHTML = $(obj).code();
-                    alert(sHTML);
-                },
+                toolbar: [
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['para', ['ol', 'paragraph']],
+                ],
             });
         });
     </script>

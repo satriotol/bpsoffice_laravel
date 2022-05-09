@@ -4,7 +4,7 @@ namespace App\Http\Requests\About;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateAboutRequest extends FormRequest
+class UpdateAboutRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -19,7 +19,7 @@ class CreateAboutRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function rules()
     {
@@ -28,7 +28,7 @@ class CreateAboutRequest extends FormRequest
             'investation' => 'required',
             'lat' => 'required',
             'lng' => 'required',
-            'image' => 'required|image',
+            'image' => 'nullable|image',
             'phone' => 'required',
             'email' => 'required|email',
             'address' => 'required',

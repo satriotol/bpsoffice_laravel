@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\About\CreateAboutRequest;
+use App\Http\Requests\About\UpdateAboutRequest;
 use App\Models\About;
 use Illuminate\Http\Request;
 
@@ -77,7 +78,7 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateAboutRequest $request, About $about)
+    public function update(UpdateAboutRequest $request, About $about)
     {
         $data = $request->all();
         if ($request->hasFile('image')) {
