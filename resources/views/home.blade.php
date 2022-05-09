@@ -108,7 +108,7 @@
                         <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="client-logo aos-init aos-animate" data-aos="zoom-in">
                                 <a href="{{ $partner->url }}" class="text-center" target="_blank">
-                                    <img src="{{ $partner->image }}" class="img-fluid" alt="">
+                                    <img src="{{ asset('uploads/' . $partner->image) }}" class="img-fluid" alt="">
                                 </a>
                             </div>
                         </div>

@@ -16,14 +16,15 @@
             <div class="card-body">
                 <table id="myTable" class="display">
                     <thead>
-                            <th>Image</th>
-                            <th>Action</th>
+                        <th>Image</th>
+                        <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($galleries as $gallery)
                             <tr>
-                                <td><img src="{{ asset('uploads/' . $gallery->image) }}" class="img-fluid" style="height: 100px" alt="">
+                                <td><img src="{{ asset('uploads/' . $gallery->image) }}" class="img-fluid"
+                                        style="height: 100px" alt="">
                                 </td>
                                 <td>
                                     <a href="{{ route('gallery.edit', $gallery->id) }}" class="btn btn-warning">

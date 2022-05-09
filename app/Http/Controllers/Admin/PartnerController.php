@@ -41,7 +41,7 @@ class PartnerController extends Controller
     {
         $data = $request->all();
         if ($request->hasFile('image')) {
-            $image = $request->image->store('image', 'public');
+            $image = $request->image->store('image', 'public_uploads');
             $data['image'] = $image;
         };
         Partner::create($data);
@@ -82,7 +82,7 @@ class PartnerController extends Controller
     {
         $data = $request->all();
         if ($request->hasFile('image')) {
-            $image = $request->image->store('image', 'public');
+            $image = $request->image->store('image', 'public_uploads');
             $partner->deleteImage();
             $data['image'] = $image;
         };

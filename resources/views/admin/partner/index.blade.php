@@ -31,7 +31,8 @@
                                         {{ $partner->url }}
                                     </a>
                                 </td>
-                                <td><img src="{{ $partner->image }}" class="img-fluid" style="height: 100px" alt="">
+                                <td><img src="{{ asset('uploads/' . $partner->image) }}" class="img-fluid"
+                                        style="height: 100px" alt="">
                                 </td>
                                 <td>
                                     <a href="{{ route('partner.edit', $partner->id) }}" class="btn btn-warning">
