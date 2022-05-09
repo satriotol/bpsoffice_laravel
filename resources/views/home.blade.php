@@ -68,13 +68,15 @@
                                 @if ($loop->first)
                                     <div class="tab-pane active show" id="tab-{{ $unit->id }}">
                                         <figure>
-                                            <img src="{{ $unit->image }}" alt="" class="img-fluid">
+                                            <img src="{{ asset('uploads/' . $unit->image) }}" alt=""
+                                                class="img-fluid">
                                         </figure>
                                     </div>
                                 @else
                                     <div class="tab-pane" id="tab-{{ $unit->id }}">
                                         <figure>
-                                            <img src="{{ $unit->image }}" alt="" class="img-fluid">
+                                            <img src="{{ asset('uploads/' . $unit->image) }}" alt=""
+                                                class="img-fluid">
                                         </figure>
                                     </div>
                                 @endif

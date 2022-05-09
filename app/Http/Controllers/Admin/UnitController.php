@@ -41,7 +41,7 @@ class UnitController extends Controller
     {
         $data = $request->all();
         if ($request->hasFile('image')) {
-            $image = $request->image->store('image', 'public');
+            $image = $request->image->store('image', 'public_uploads');
             $data['image'] = $image;
         };
         $description = $data['description'];
@@ -101,7 +101,7 @@ class UnitController extends Controller
     {
         $data = $request->all();
         if ($request->hasFile('image')) {
-            $image = $request->image->store('image', 'public');
+            $image = $request->image->store('image', 'public_uploads');
             $unit->deleteImage();
             $data['image'] = $image;
         };

@@ -10,12 +10,8 @@ class Unit extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'description', 'address', 'phone', 'fax', 'email', 'image'];
-    public function getImageAttribute($value)
-    {
-        return url('storage/' . $value);
-    }
     public function deleteImage()
     {
-        Storage::disk('public')->delete($this->attributes['image']);
+        Storage::disk('public_uploads')->delete($this->attributes['image']);
     }
 }
