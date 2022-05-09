@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('logo.png') }}" rel="icon">
+    <link href="{{ asset('logo.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -97,7 +97,7 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('galleries') }}">Galeri</a>
                             </li>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('contact') }}">Kontak</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="{{route('karir')}}">Karir</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{ route('karir') }}">Karir</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-6 col-md-6 footer-newsletter">

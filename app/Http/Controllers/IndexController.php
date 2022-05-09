@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Carrier;
 use App\Models\Gallery;
+use App\Models\Image;
 use App\Models\Partner;
 use App\Models\Slider;
 use App\Models\Unit;
@@ -34,17 +35,20 @@ class IndexController extends Controller
     }
     public function galleries()
     {
+        $image = Image::first();
         $galleries = Gallery::all();
-        return view('gallery', compact('galleries'));
+        return view('gallery', compact('galleries', 'image'));
     }
     public function contact()
     {
+        $image = Image::first();
         $about = About::first();
-        return view('contact', compact('about'));
+        return view('contact', compact('about', 'image'));
     }
     public function karir()
     {
+        $image = Image::first();
         $carriers = Carrier::all();
-        return view('karir', compact('carriers'));
+        return view('karir', compact('carriers', 'image'));
     }
 }

@@ -1,6 +1,14 @@
 @extends('layouts.main')
 @push('style')
     <style>
+        .jumbotron {
+            background: url("{{ $image->image_carrier }}");
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+            filter: drop-shadow(0px -27px 32px black);
+        }
+
         .news-box {
             background: #fff;
             border-radius: 5px;
