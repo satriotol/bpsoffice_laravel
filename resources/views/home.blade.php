@@ -88,12 +88,9 @@
             <div class="container">
 
                 <div class="row aos-init aos-animate" data-aos="zoom-in">
-                    <div class="col-lg-9 text-center text-lg-start">
+                    <div class="col-lg-12 text-center text-lg-start">
                         <h3>INVESTASI</h3>
                         {!! $about->investation !!}
-                    </div>
-                    <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="#">Masuk</a>
                     </div>
                 </div>
 

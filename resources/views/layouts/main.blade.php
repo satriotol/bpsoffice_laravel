@@ -97,16 +97,15 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('galleries') }}">Galeri</a>
                             </li>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('contact') }}">Kontak</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Investasi</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Karir</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{{route('karir')}}">Karir</a></li>
                         </ul>
                     </div>
-                    {{-- <div class="col-lg-6 col-md-6 footer-newsletter">
+                    <div class="col-lg-6 col-md-6 footer-newsletter">
                         <iframe
                             src="https://maps.google.com/maps?q={{ $about->lat }},{{ $about->lng }}&amp;output=embed"
                             frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen="">
                         </iframe>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,16 +120,16 @@
             class="bi bi-arrow-up-short"></i></a>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>
-    <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-    <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+    <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Template Main JS File -->
-    <script src="{{asset("assets/js/main.js")}}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
     <script type="text/javascript">
         const lightbox = GLightbox({
             touchNavigation: true,

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Carrier;
 use App\Models\Gallery;
 use App\Models\Partner;
 use App\Models\Slider;
@@ -40,5 +41,10 @@ class IndexController extends Controller
     {
         $about = About::first();
         return view('contact', compact('about'));
+    }
+    public function karir()
+    {
+        $carriers = Carrier::all();
+        return view('karir', compact('carriers'));
     }
 }
