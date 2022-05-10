@@ -28,12 +28,12 @@
                             </div>
                             <div class="form-group">
                                 <label>Kualifikasi Umum</label>
-                                <textarea name="general_qualification" class="summernote" cols="30" rows="10"
+                                <textarea name="general_qualification" class="summernote2" cols="30" rows="10"
                                     required>{{ isset($carrier) ? $carrier->general_qualification : '' }}</textarea>
                             </div>
                             <div class="form-group">
                                 <label>Kualifikasi Khusus</label>
-                                <textarea name="special_qualification" class="summernote" cols="30" rows="10"
+                                <textarea name="special_qualification" class="summernote2" cols="30" rows="10"
                                     required>{{ isset($carrier) ? $carrier->special_qualification : '' }}</textarea>
                             </div>
                             <div class="text-right">

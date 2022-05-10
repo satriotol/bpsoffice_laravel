@@ -164,14 +164,4 @@
             accessToken: 'pk.eyJ1Ijoic2F0cmlvdG9sIiwiYSI6ImNrc3E1YTh0NzAzdWMyb3BicTUxbnMxY3YifQ.XfiYl1qOEFzjRsPs3TDijw'
         }).addTo(map);
     </script>
-    <script>
-        $('.summernote2').each(function(i, obj) {
-            $(obj).summernote({
-                toolbar: [
-                    ['font', ['bold', 'underline', 'clear']],
-                    ['para', ['ol', 'paragraph']],
-                ],
-            });
-        });
-    </script>
 @endpush

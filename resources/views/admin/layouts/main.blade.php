@@ -62,9 +62,7 @@
     <!-- Template JS File -->
     <script src="{{ asset('assets_admin/js/scripts.js') }}"></script>
     <script src="{{ asset('assets_admin/js/custom.js') }}"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js">
-
-    </script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     @stack('script')
     <script>
@@ -75,6 +73,16 @@
                     var sHTML = $(obj).code();
                     alert(sHTML);
                 },
+            });
+        });
+    </script>
+    <script>
+        $('.summernote2').each(function(i, obj) {
+            $(obj).summernote({
+                toolbar: [
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['para', ['ol', 'paragraph']],
+                ],
             });
         });
     </script>
