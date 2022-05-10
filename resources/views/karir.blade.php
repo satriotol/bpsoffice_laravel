@@ -29,7 +29,7 @@
         <section id="features" class="features">
             <div class="container">
                 <div class="section-title aos-init aos-animate" data-aos="fade-up">
-                    {{-- <h2>{{ $carrier }}</h2> --}}
+                    <h2>Karir</h2>
                 </div>
                 <div class="row">
                     <div class="col-md-12">

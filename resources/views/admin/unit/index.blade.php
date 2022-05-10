@@ -28,12 +28,13 @@
                     <tbody>
                         @foreach ($units as $unit)
                             <tr>
-                                <td>{{$unit->name}}</td>
-                                <td>{{$unit->address}}</td>
-                                <td>{{$unit->phone}}</td>
-                                <td>{{$unit->fax}}</td>
-                                <td>{{$unit->email}}</td>
-                                <td><img src="{{ $unit->image }}" class="img-fluid" style="height: 100px" alt="">
+                                <td>{{ $unit->name }}</td>
+                                <td>{{ $unit->address }}</td>
+                                <td>{{ $unit->phone }}</td>
+                                <td>{{ $unit->fax }}</td>
+                                <td>{{ $unit->email }}</td>
+                                <td><img src="{{ asset('uploads/' . $unit->image) }}" class="img-fluid"
+                                        style="height: 100px" alt="">
                                 </td>
                                 <td>
                                     <a href="{{ route('unit.edit', $unit->id) }}" class="btn btn-warning">

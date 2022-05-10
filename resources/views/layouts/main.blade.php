@@ -83,7 +83,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-info">
                             <img src="{{ asset('logo.png') }}" class="img-fluid" alt="">
-                            <div class="address">
+                            {{-- <div class="address">
                                 <p><i class="bi bi-geo-alt"></i> {{ $about->address }}</p>
                             </div>
                             <div class="email">
@@ -91,7 +91,7 @@
                             </div>
                             <div class="phone">
                                 <p><i class="bi bi-phone"></i> {{ $about->phone }}</p>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 

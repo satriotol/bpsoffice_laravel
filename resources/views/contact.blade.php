@@ -40,7 +40,6 @@
                                 <h4>Phone</h4>
                                 <p>{{ $about->phone }}</p>
                             </div>
-
                             <iframe
                                 src="https://maps.google.com/maps?q={{ $about->lat }},{{ $about->lng }}&amp;output=embed"
                                 frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen="">
