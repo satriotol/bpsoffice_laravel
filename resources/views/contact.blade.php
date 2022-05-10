@@ -52,20 +52,20 @@
                         <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label for="name">Your Name</label>
+                                    <label for="name">Nama</label>
                                     <input type="text" name="name" class="form-control" id="name" required="">
                                 </div>
                                 <div class="form-group col-md-6 mt-3 mt-md-0">
-                                    <label for="name">Your Email</label>
+                                    <label for="name">Email</label>
                                     <input type="email" class="form-control" name="email" id="email" required="">
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <label for="name">Subject</label>
+                                <label for="name">Subjek</label>
                                 <input type="text" class="form-control" name="subject" id="subject" required="">
                             </div>
                             <div class="form-group mt-3">
-                                <label for="name">Message</label>
+                                <label for="name">Pesan</label>
                                 <textarea class="form-control" name="message" rows="10" required=""></textarea>
                             </div>
                             <div class="my-3">
