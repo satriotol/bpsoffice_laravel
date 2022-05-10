@@ -80,7 +80,7 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-8">
                         <div class="footer-info">
                             <img src="{{ asset('logo.png') }}" class="img-fluid" alt="">
                             {{-- <div class="address">
@@ -95,7 +95,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 footer-links">
+                    <div class="col-lg-2 col-md-6 col-4 footer-links">
                         <h4>Navigasi</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}">Beranda</a></li>
