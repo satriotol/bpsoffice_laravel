@@ -15,21 +15,28 @@
     <main id="main" style="padding: 60px 0px">
         <div class="jumbotron jumbotron-fluid" style="padding: 120px 0px">
         </div>
-        <section class="gallery">
+        <section id="portfolio" class="portfolio">
             <div class="container">
+
                 <div class="section-title aos-init aos-animate" data-aos="fade-up">
                     <h2>Galeri</h2>
                 </div>
-                <div class="row">
+
+                <div class="row portfolio-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200"
+                    style="position: relative; height: 1025.96px;">
                     @foreach ($galleries as $gallery)
-                        <div class="col-md-4 mb-2">
-                            <a href="{{ asset('uploads/' . $gallery->image) }}" class="glightbox">
-                                <img src="{{ asset('uploads/' . $gallery->image) }}" style="height: 100%"
-                                    class="img-fluid aos-init aos-animate" data-aos="zoom-in">
-                            </a>
+                        <div class="col-lg-4 col-md-6 portfolio-item">
+                            <div class="portfolio-wrap">
+                                <img src="{{ asset('uploads/' . $gallery->image) }}" class="img-fluid" alt="">
+                                <div class="portfolio-links">
+                                    <a href="{{ asset('uploads/' . $gallery->image) }}" data-gallery="portfolioGallery"
+                                        class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                                </div>
+                            </div>
                         </div>
                     @endforeach
                 </div>
+
             </div>
         </section>
     </main>
