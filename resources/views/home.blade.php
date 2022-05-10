@@ -13,7 +13,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 aos-init aos-animate" data-aos="zoom-in">
-                        <img src="{{ asset('uploads/' . $about->image) }}" class="img-fluid" alt="">
+                        <a href="{{ asset('uploads/' . $about->image) }}" class="glightbox">
+                            <img src="{{ asset('uploads/' . $about->image) }}" class="img-fluid" alt="">
+                        </a>
                     </div>
                     <div class="col-lg-6 d-flex flex-column justify-contents-center aos-init aos-animate"
                         data-aos="fade-left">
@@ -68,15 +70,19 @@
                                 @if ($loop->first)
                                     <div class="tab-pane active show" id="tab-{{ $unit->id }}">
                                         <figure>
-                                            <img src="{{ asset('uploads/' . $unit->image) }}" alt=""
-                                                class="img-fluid">
+                                            <a href="{{ asset('uploads/' . $unit->image) }}" class="glightbox">
+                                                <img src="{{ asset('uploads/' . $unit->image) }}" alt=""
+                                                    class="img-fluid">
+                                            </a>
                                         </figure>
                                     </div>
                                 @else
                                     <div class="tab-pane" id="tab-{{ $unit->id }}">
                                         <figure>
-                                            <img src="{{ asset('uploads/' . $unit->image) }}" alt=""
-                                                class="img-fluid">
+                                            <a href="{{ asset('uploads/' . $unit->image) }}" class="glightbox">
+                                                <img src="{{ asset('uploads/' . $unit->image) }}" alt=""
+                                                    class="img-fluid">
+                                            </a>
                                         </figure>
                                     </div>
                                 @endif
