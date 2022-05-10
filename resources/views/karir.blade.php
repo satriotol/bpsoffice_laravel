@@ -33,7 +33,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="news-box p-4">
+                        <div class="news-box p-4 mb-2">
                             @foreach ($carriers as $carrier)
                                 <h4>{{ $carrier->name }}</h4>
                                 <div class="mt-2">
