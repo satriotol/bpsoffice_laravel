@@ -80,9 +80,14 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6 col-8">
+                    <div class="col-lg-4 col-md-6">
                         <div class="footer-info">
-                            <img src="{{ asset('logo.png') }}" class="img-fluid" alt="">
+                            <img src="{{ asset('logo.png') }}" style="height: 200px" class="img-fluid" alt="">
+                            <p>
+                                {{ $about->address }} <br>
+                                <strong>Phone:</strong> {{ $about->phone }}<br>
+                                <strong>Email:</strong> {{ $about->email }}<br>
+                            </p>
                             {{-- <div class="address">
                                 <p><i class="bi bi-geo-alt"></i> {{ $about->address }}</p>
                             </div>
@@ -94,8 +99,7 @@
                             </div> --}}
                         </div>
                     </div>
-
-                    <div class="col-lg-2 col-md-6 col-4 footer-links">
+                    <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Navigasi</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}">Beranda</a></li>
@@ -108,7 +112,7 @@
                     <div class="col-lg-6 col-md-12 footer-newsletter">
                         <iframe
                             src="https://maps.google.com/maps?q={{ $about->lat }},{{ $about->lng }}&amp;output=embed"
-                            frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen="">
+                            frameborder="0" style="border:0; width: 100%; height: 100%;" allowfullscreen="">
                         </iframe>
                     </div>
                 </div>
