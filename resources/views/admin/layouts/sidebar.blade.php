@@ -56,6 +56,12 @@
                     <span>Karir</span>
                 </a>
             </li>
+            <li class="{{ Request::routeIs('carrier.*') ? 'active' : '' }}"><a class="nav-link"
+                    href="{{ route('carrier.index') }}">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Menu</span>
+                </a>
+            </li>
         </ul>
     </aside>
 </div>

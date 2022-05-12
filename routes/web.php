@@ -41,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
         '/admin/gallery' => GalleryController::class,
         '/admin/carrier' => CarrierController::class,
         '/admin/image' => ImageController::class,
+        '/admin/menu' => ImageController::class,
     ]);
 });
 
