@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ImageController;
+use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
@@ -28,6 +29,7 @@ Route::get('/detail_unit/{unit}', [IndexController::class, 'detail_unit'])->name
 Route::get('/galleries', [IndexController::class, 'galleries'])->name('galleries');
 Route::get('/contact', [IndexController::class, 'contact'])->name('contact');
 Route::get('/karir', [IndexController::class, 'karir'])->name('karir');
+Route::get('/menu/{slug}', [IndexController::class, 'menu'])->name('menu');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
@@ -41,7 +43,7 @@ Route::middleware(['auth'])->group(function () {
         '/admin/gallery' => GalleryController::class,
         '/admin/carrier' => CarrierController::class,
         '/admin/image' => ImageController::class,
-        '/admin/menu' => ImageController::class,
+        '/admin/menu' => MenuController::class,
     ]);
 });
 

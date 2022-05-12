@@ -107,6 +107,9 @@
                             </li>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('contact') }}">Kontak</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('karir') }}">Karir</a></li>
+                            @foreach ($menus as $menu)
+                                <li><i class="bx bx-chevron-right"></i> <a href="{{ route('karir') }}">{{$menu->name}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="col-lg-6 col-md-12 footer-newsletter">

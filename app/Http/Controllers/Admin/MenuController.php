@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Menu\CreateMenuRequest;
+use App\Http\Requests\Menu\UpdateMenuRequest;
+use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class MenuController extends Controller
 {
@@ -14,7 +18,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        //
+        $menus = Menu::all();
+        return view('admin.menu.index', compact('menus'));
     }
 
     /**
@@ -24,7 +29,9 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        $types = Menu::TYPE;
+        $statuses = Menu::STATUS;
+        return view('admin.menu.create', compact('types', 'statuses'));
     }
 
     /**
@@ -33,9 +40,17 @@ class MenuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateMenuRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->name, '-');
+        if ($request->hasFile('slider')) {
+            $slider = $request->slider->store('image', 'public_uploads');
+            $data['slider'] = $slider;
+        };
+        Menu::create($data);
+        session()->flash('success');
+        return redirect(route('menu.index'));
     }
 
     /**
@@ -55,9 +70,11 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Menu $menu)
     {
-        //
+        $types = Menu::TYPE;
+        $statuses = Menu::STATUS;
+        return view('admin.menu.create', compact('types', 'statuses', 'menu'));
     }
 
     /**
@@ -67,9 +84,18 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateMenuRequest $request, Menu $menu)
     {
-        //
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->name, '-');
+        if ($request->hasFile('slider')) {
+            $slider = $request->slider->store('image', 'public_uploads');
+            $menu->deleteImage();
+            $data['slider'] = $slider;
+        };
+        $menu->update($data);
+        session()->flash('success');
+        return redirect(route('menu.index'));
     }
 
     /**
@@ -78,8 +104,11 @@ class MenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Menu $menu)
     {
-        //
+        $menu->delete();
+        $menu->deleteImage();
+        session()->flash('success');
+        return redirect(route('menu.index'));
     }
 }

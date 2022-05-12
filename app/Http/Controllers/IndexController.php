@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\Carrier;
 use App\Models\Gallery;
 use App\Models\Image;
+use App\Models\Menu;
 use App\Models\Partner;
 use App\Models\Slider;
 use App\Models\Unit;
@@ -16,7 +17,8 @@ class IndexController extends Controller
     public function __construct()
     {
         $about = About::first();
-        view()->share('about', $about);
+        $menus = Menu::where('status', 1)->get();
+        view()->share(compact('about', 'menus'));
     }
 
     public function home()
@@ -50,5 +52,10 @@ class IndexController extends Controller
         $image = Image::first();
         $carriers = Carrier::all();
         return view('karir', compact('carriers', 'image'));
+    }
+    public function menu($slug)
+    {
+        $menu = Menu::where('slug', $slug)->first();
+        return view('menu',compact('menu'));
     }
 }
