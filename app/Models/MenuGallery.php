@@ -19,6 +19,6 @@ class MenuGallery extends Model
 
     public function deleteImage()
     {
-        Storage::disk('public_images')->delete($this->attributes['image']);
+        Storage::disk('public_uploads')->delete($this->attributes['image']);
     }
 }

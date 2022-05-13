@@ -57,7 +57,7 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('menu_gallery.edit', ['menu_gallery' => $menu_gallery->id, 'post' => $menu_gallery->menu_id]) }}"
+                                            <a href="{{ route('menu_gallery.edit', ['menu_gallery' => $menu_gallery->id, 'menu' => $menu_gallery->menu_id]) }}"
                                                 class="btn btn-warning">
                                                 Edit
                                             </a>

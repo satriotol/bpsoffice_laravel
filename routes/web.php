@@ -37,7 +37,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/setting', [SettingController::class, 'index'])->name('setting.index');
     Route::put('/admin/setting/{user}', [SettingController::class, 'update'])->name('setting.update');
 
-    Route::get('/admin/menu_image/create', [MenuGalleryController::class, 'create'])->name('menu_gallery.create');
+    Route::get('/admin/menu_gallery/create/{menu}', [MenuGalleryController::class, 'create'])->name('menu_gallery.create');
+    Route::post('/admin/menu_gallery/store', [MenuGalleryController::class, 'store'])->name('menu_gallery.store');
+    Route::get('/admin/menu_gallery/edit/{menu_gallery}/{menu}', [MenuGalleryController::class, 'edit'])->name('menu_gallery.edit');
+    Route::put('/admin/menu_gallery/{menu_gallery}', [MenuGalleryController::class, 'update'])->name('menu_gallery.update');
+    Route::delete('/admin/menu_gallery/{menu_gallery}', [MenuGalleryController::class, 'destroy'])->name('menu_gallery.destroy');
+
     Route::resources([
         '/admin/slider' => SliderController::class,
         '/admin/unit' => UnitController::class,
