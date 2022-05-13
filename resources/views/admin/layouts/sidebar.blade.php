@@ -58,7 +58,7 @@
             </li>
             <li class="{{ Request::routeIs('menu.*') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('menu.index') }}">
-                    <i class="fas fa-briefcase"></i>
+                    <i class="fas fa-bars"></i>
                     <span>Menu</span>
                 </a>
             </li>
