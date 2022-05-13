@@ -19,24 +19,33 @@
             <div class="container">
 
                 <div class="section-title aos-init aos-animate" data-aos="fade-up">
-                    <h2>{{$menu->name}}</h2>
+                    <h2>{{ $menu->name }}</h2>
                 </div>
-
-                {{-- <div class="row portfolio-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200"
-                    style="position: relative; height: 1025.96px;">
-                    @foreach ($galleries as $gallery)
-                        <div class="col-lg-4 col-md-6 portfolio-item">
-                            <div class="portfolio-wrap">
-                                <img src="{{ asset('uploads/' . $gallery->image) }}" class="img-fluid" alt="">
-                                <div class="portfolio-links">
-                                    <a href="{{ asset('uploads/' . $gallery->image) }}" data-gallery="portfolioGallery"
-                                        class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                @if ($menu->type === 'GAMBAR')
+                    <div class="row portfolio-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200"
+                        style="position: relative; height: 1025.96px;">
+                        @foreach ($menu->menu_galleries as $gallery)
+                            <div class="col-lg-4 col-md-6 portfolio-item">
+                                <div class="portfolio-wrap">
+                                    <img src="{{ asset('uploads/' . $gallery->image) }}" class="img-fluid" alt="">
+                                    <div class="portfolio-links">
+                                        <a href="{{ asset('uploads/' . $gallery->image) }}"
+                                            data-gallery="portfolioGallery" class="portfolio-lightbox"><i
+                                                class="bx bx-plus"></i></a>
+                                    </div>
                                 </div>
                             </div>
+                        @endforeach
+                    </div>
+                @else
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="news-box p-4">
+                                {!! $menu->menu_descriptions->first()->description !!}
+                            </div>
                         </div>
-                    @endforeach
-                </div> --}}
-
+                    </div>
+                @endif
             </div>
         </section>
     </main>

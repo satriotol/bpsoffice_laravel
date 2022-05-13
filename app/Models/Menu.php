@@ -27,8 +27,8 @@ class Menu extends Model
     {
         return $this->hasMany(MenuGallery::class, 'menu_id', 'id');
     }
-    public function menu_description()
+    public function menu_descriptions()
     {
-        return $this->hasOne(MenuDescription::class, 'menu_id', 'id');
+        return $this->hasMany(MenuDescription::class, 'menu_id', 'id');
     }
 }

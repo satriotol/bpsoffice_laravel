@@ -32,51 +32,100 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Table</h4>
-                        <div class="card-header-action">
-                            <a href="{{ route('menu_gallery.create', $menu->id) }}" class="badge badge-primary">Create</a>
+                @if ($menu->type === 'GAMBAR')
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Table</h4>
+                            <div class="card-header-action">
+                                <a href="{{ route('menu_gallery.create', $menu->id) }}"
+                                    class="badge badge-primary">Create</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table id="myTable" class="display">
+                                <thead>
+                                    <th>Image</th>
+                                    <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($menu->menu_galleries as $menu_gallery)
+                                        <tr>
+                                            <td>
+                                                <a href="{{ asset('uploads/' . $menu_gallery->image) }}"
+                                                    data-lightbox="roadtrip">
+                                                    <img src="{{ asset('uploads/' . $menu_gallery->image) }}"
+                                                        style="height: 100px" class="img-fluid">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('menu_gallery.edit', ['menu_gallery' => $menu_gallery->id, 'menu' => $menu_gallery->menu_id]) }}"
+                                                    class="btn btn-warning">
+                                                    Edit
+                                                </a>
+                                                <form action="{{ route('menu_gallery.destroy', $menu_gallery->id) }}"
+                                                    method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger"
+                                                        onclick="return confirm('Are you sure?')">
+                                                        Delete
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <table id="myTable" class="display">
-                            <thead>
-                                <th>Image</th>
-                                <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($menu->menu_galleries as $menu_gallery)
-                                    <tr>
-                                        <td>
-                                            <a href="{{ asset('uploads/' . $menu_gallery->image) }}"
-                                                data-lightbox="roadtrip">
-                                                <img src="{{ asset('uploads/' . $menu_gallery->image) }}"
-                                                    style="height: 100px" class="img-fluid">
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="{{ route('menu_gallery.edit', ['menu_gallery' => $menu_gallery->id, 'menu' => $menu_gallery->menu_id]) }}"
-                                                class="btn btn-warning">
-                                                Edit
-                                            </a>
-                                            <form action="{{ route('menu_gallery.destroy', $menu_gallery->id) }}"
-                                                method="POST" class="d-inline">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger"
-                                                    onclick="return confirm('Are you sure?')">
-                                                    Delete
-                                                </button>
-                                            </form>
-                                        </td>
+                @else
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Table</h4>
+                            @if ($menu->menu_descriptions->count() == 0)
+                                <div class="card-header-action">
+                                    <a href="{{ route('menu_description.create', $menu->id) }}"
+                                        class="badge badge-primary">Create</a>
+                                </div>
+                            @endif
+                        </div>
+                        <div class="card-body">
+                            <table id="myTable" class="display">
+                                <thead>
+                                    <th>Deskripsi</th>
+                                    <th>Action</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach ($menu->menu_descriptions as $menu_description)
+                                        <tr>
+                                            <td>
+                                                {!! $menu_description->description !!}
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('menu_description.edit', ['menu_description' => $menu_description->id, 'menu' => $menu_description->menu_id]) }}"
+                                                    class="btn btn-warning">
+                                                    Edit
+                                                </a>
+                                                <form
+                                                    action="{{ route('menu_description.destroy', $menu_description->id) }}"
+                                                    method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger"
+                                                        onclick="return confirm('Are you sure?')">
+                                                        Delete
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
     </div>

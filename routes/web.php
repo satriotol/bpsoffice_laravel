@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\MenuDescriptionController;
 use App\Http\Controllers\Admin\MenuGalleryController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\SettingController;
@@ -42,6 +43,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/menu_gallery/edit/{menu_gallery}/{menu}', [MenuGalleryController::class, 'edit'])->name('menu_gallery.edit');
     Route::put('/admin/menu_gallery/{menu_gallery}', [MenuGalleryController::class, 'update'])->name('menu_gallery.update');
     Route::delete('/admin/menu_gallery/{menu_gallery}', [MenuGalleryController::class, 'destroy'])->name('menu_gallery.destroy');
+
+    Route::get('/admin/menu_description/create/{menu}', [MenuDescriptionController::class, 'create'])->name('menu_description.create');
+    Route::post('/admin/menu_description/store', [MenuDescriptionController::class, 'store'])->name('menu_description.store');
+    Route::get('/admin/menu_description/edit/{menu_description}/{menu}', [MenuDescriptionController::class, 'edit'])->name('menu_description.edit');
+    Route::put('/admin/menu_description/{menu_description}', [MenuDescriptionController::class, 'update'])->name('menu_description.update');
+    Route::delete('/admin/menu_description/{menu_description}', [MenuDescriptionController::class, 'destroy'])->name('menu_description.destroy');
 
     Route::resources([
         '/admin/slider' => SliderController::class,
