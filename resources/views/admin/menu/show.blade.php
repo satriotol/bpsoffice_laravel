@@ -1,22 +1,33 @@
 @extends('admin.layouts.main')
 @section('content')
     <div class="section-header">
-        <h1>Post Detail</h1>
+        <h1>Menu Detail</h1>
     </div>
 
     <div class="section-body">
-        <h2 class="section-title">Post Detail</h2>
+        <h2 class="section-title">Menu Detail</h2>
         @include('admin.partials.errors')
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Post</h4>
+                        <h4>Menu</h4>
                     </div>
                     <div class="card-body">
-                        <p>{{ $post->name }}</p>
-                        <p>{{ $post->user->name }}</p>
-                        <p>{{ $post->date }}</p>
+                        <p>
+                            {{ $menu->name }}
+                            <br>
+                            @if ($menu->status == 1)
+                                Aktif
+                            @else
+                                Tidak Aktif
+                            @endif
+                            <br>
+                            {{ $menu->type }}
+                            <br>
+                            <img src="{{ asset('uploads/' . $menu->slider) }}" class="img-fluid" alt="">
+                        </p>
+                        <p>{{ $menu->date }}</p>
                     </div>
                 </div>
             </div>
@@ -25,33 +36,32 @@
                     <div class="card-header">
                         <h4>Table</h4>
                         <div class="card-header-action">
-                            <a href="{{ route('post_image.create', $post->id) }}" class="badge badge-primary">Create</a>
+                            <a href="{{ route('menu_gallery.create', $menu->id) }}" class="badge badge-primary">Create</a>
                         </div>
                     </div>
                     <div class="card-body">
                         <table id="myTable" class="display">
                             <thead>
-                                <th>Social Media</th>
                                 <th>Image</th>
                                 <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($post->post_images as $post_image)
+                                @foreach ($menu->menu_galleries as $menu_gallery)
                                     <tr>
-                                        <td>{{ $post_image->social_media->name }}</td>
                                         <td>
-                                            <a href="{{ asset('uploads/' . $post_image->image) }}" data-lightbox="roadtrip">
-                                                <img src="{{ asset('uploads/' . $post_image->image) }}" style="height: 100px"
-                                                    class="img-fluid">
+                                            <a href="{{ asset('uploads/' . $menu_gallery->image) }}"
+                                                data-lightbox="roadtrip">
+                                                <img src="{{ asset('uploads/' . $menu_gallery->image) }}"
+                                                    style="height: 100px" class="img-fluid">
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('post_image.edit', ['post_image' => $post_image->id, 'post' => $post_image->post_id]) }}"
+                                            <a href="{{ route('menu_gallery.edit', ['menu_gallery' => $menu_gallery->id, 'post' => $menu_gallery->menu_id]) }}"
                                                 class="btn btn-warning">
                                                 Edit
                                             </a>
-                                            <form action="{{ route('post_image.destroy', $post_image->id) }}"
+                                            <form action="{{ route('menu_gallery.destroy', $menu_gallery->id) }}"
                                                 method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')

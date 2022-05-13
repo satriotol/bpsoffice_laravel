@@ -17,18 +17,29 @@
             <div class="card-body">
                 <table id="myTable" class="display">
                     <thead>
-                        <th>Date</th>
+                        <th>Status</th>
                         <th>Name</th>
-                        <th>User</th>
+                        <th>Tipe</th>
+                        <th>Gambar</th>
                         <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($menus as $menu)
                             <tr>
-                                <td>{{ $menu->date }}</td>
+                                <td>
+                                    @if ($menu->status == 1)
+                                        Aktif
+                                    @else
+                                        Tidak Aktif
+                                    @endif
+                                </td>
                                 <td>{{ $menu->name }}</td>
-                                <td>{{ $menu->user->name ?? '' }}</td>
+                                <td>{{ $menu->type }}</td>
+                                <td>
+                                    <img src="{{ asset('uploads/' . $menu->slider) }}" class="img-fluid"
+                                        style="height:100px" alt="">
+                                </td>
                                 <td>
                                     <a href="{{ route('menu.show', $menu->id) }}" class="btn btn-primary">
                                         Detail

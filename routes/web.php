@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\MenuGalleryController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
@@ -35,6 +36,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
     Route::get('/admin/setting', [SettingController::class, 'index'])->name('setting.index');
     Route::put('/admin/setting/{user}', [SettingController::class, 'update'])->name('setting.update');
+
+    Route::get('/admin/menu_image/create', [MenuGalleryController::class, 'create'])->name('menu_gallery.create');
     Route::resources([
         '/admin/slider' => SliderController::class,
         '/admin/unit' => UnitController::class,

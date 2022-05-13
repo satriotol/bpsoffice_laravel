@@ -23,4 +23,12 @@ class Menu extends Model
     {
         Storage::disk('public_uploads')->delete($this->attributes['slider']);
     }
+    public function menu_galleries()
+    {
+        return $this->hasMany(MenuGallery::class, 'menu_id', 'id');
+    }
+    public function menu_description()
+    {
+        return $this->hasOne(MenuDescription::class, 'menu_id', 'id');
+    }
 }
