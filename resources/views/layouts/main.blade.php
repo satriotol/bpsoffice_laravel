@@ -108,7 +108,8 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('contact') }}">Kontak</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="{{ route('karir') }}">Karir</a></li>
                             @foreach ($menus as $menu)
-                                <li><i class="bx bx-chevron-right"></i> <a href="{{ route('karir') }}">{{$menu->name}}</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a
+                                        href="{{ route('menu', $menu->slug) }}">{{ $menu->name }}</a></li>
                             @endforeach
                         </ul>
                     </div>
