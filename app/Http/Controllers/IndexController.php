@@ -55,7 +55,7 @@ class IndexController extends Controller
     }
     public function menu($slug)
     {
-        $menu = Menu::where('slug', $slug)->first();
-        return view('menu',compact('menu'));
+        $menu = Menu::where('slug', $slug)->where('status', 1)->first();
+        return view('menu', compact('menu'));
     }
 }
