@@ -92,14 +92,19 @@
                 <div class="row">
                     @foreach ($units as $unit)
                         <div class="col-md-6 col-lg-3 mb-5 mb-lg-0 aos-init aos-animate" data-aos="zoom-in">
-                            <img src="{{ asset('uploads/' . $unit->image) }}" class="img-fluid" alt="">
+                            <a href="{{ asset('uploads/' . $unit->image) }}" class="glightbox">
+                                <img src="{{ asset('uploads/' . $unit->image) }}"
+                                    style="height: 200px; width:100%;object-fit:cover">
+                            </a>
+
                             <div class="icon-box icon-box-blue">
                                 <h4 class="title"><a href="">{{ $unit->name }}</a></h4>
                                 <p class="description">
                                     Alamat : {{ $unit->address }} <br>
                                     Telepon : {{ $unit->phone }}
                                 </p>
-                                <a href="{{ route('detail_unit', $unit->id) }}" class="btn-primary-custom mt-2">Kunjungi</a>
+                                <a href="{{ route('detail_unit', $unit->id) }}"
+                                    class="btn-primary-custom mt-2">Kunjungi</a>
                             </div>
                         </div>
                     @endforeach

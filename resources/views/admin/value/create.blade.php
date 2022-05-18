@@ -1,17 +1,17 @@
 @extends('admin.layouts.main')
 @section('content')
     <div class="section-header">
-        <h1>Karir Form</h1>
+        <h1>Nilai Nilai Perusahaan Form</h1>
     </div>
 
     <div class="section-body">
-        <h2 class="section-title">Karir Form</h2>
+        <h2 class="section-title">Nilai Nilai Perusahaan Form</h2>
         @include('admin.partials.errors')
         <div class="row">
             <div class="col-md-12 col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Karir</h4>
+                        <h4>Nilai Nilai Perusahaan</h4>
                     </div>
                     <div class="card-body">
                         <form
