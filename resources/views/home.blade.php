@@ -1,4 +1,19 @@
 @extends('layouts.main')
+@push('style')
+    <style>
+        .card-unit {
+            box-shadow: 0 10px 29px 0 rgb(68 88 144 / 10%);
+            transition: all 0.3s ease-in-out;
+            border-radius: 4px;
+            border-bottom: 3px solid #fff;
+        }
+
+        .card-unit:hover {
+            border-color: #2282ff;
+        }
+
+    </style>
+@endpush
 @section('content')
     <section id="hero">
         <div class="owl-carousel">
@@ -91,21 +106,23 @@
                 </div>
                 <div class="row">
                     @foreach ($units as $unit)
-                        <div class="col-md-6 col-lg-3 mb-5 aos-init aos-animate" style="height:100%;" data-aos="zoom-in">
-                            <a href="{{ asset('uploads/' . $unit->image) }}" class="glightbox">
-                                <img src="{{ asset('uploads/' . $unit->image) }}" style="height: 200px; width:100%;object-fit:cover;
-                                                background-color: white;">
-                            </a>
-
-                            <div class="icon-box icon-box-blue">
-                                <h4 class="title"><a
-                                        href="{{ route('detail_unit', $unit->id) }}">{{ $unit->name }}</a></h4>
-                                <p class="description">
-                                    Alamat : {{ $unit->address }} <br>
-                                    Telepon : {{ $unit->phone }}
-                                </p>
-                                <a href="{{ route('detail_unit', $unit->id) }}"
-                                    class="btn-primary-custom mt-5">Kunjungi</a>
+                        <div class="col-md-6 col-lg-3 aos-init aos-animate mb-2" data-aos="zoom-in">
+                            <div class="card" style="height:100%">
+                                <a href="{{ asset('uploads/' . $unit->image) }}" class="glightbox">
+                                    <img src="{{ asset('uploads/' . $unit->image) }}" class="card-img-top"
+                                        style="height: 100%; width:100%;object-fit:cover; background-color: white;">
+                                </a>
+                                <div class="card-body card-unit">
+                                    <h5 class="card-title">{{ $unit->name }}</h5>
+                                    <p class="card-text">
+                                        Alamat : {{ $unit->address }} <br>
+                                        Telepon : {{ $unit->phone }}
+                                    </p>
+                                    <div class="text-center">
+                                        <a href="{{ route('detail_unit', $unit->id) }}"
+                                            class="btn-primary-custom">Kunjungi</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     @endforeach
