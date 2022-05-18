@@ -110,7 +110,7 @@
                             <div class="card" style="height:100%">
                                 <a href="{{ asset('uploads/' . $unit->image) }}" class="glightbox">
                                     <img src="{{ asset('uploads/' . $unit->image) }}" class="card-img-top"
-                                        style="height: 100%; width:100%;object-fit:cover; background-color: white;">
+                                        style="height: 200px; width:100%;object-fit:cover; background-color: white;">
                                 </a>
                                 <div class="card-body card-unit">
                                     <h5 class="card-title">{{ $unit->name }}</h5>
