@@ -38,6 +38,12 @@
                     <span>Tentang</span>
                 </a>
             </li>
+            <li class="{{ Request::routeIs('value.*') ? 'active' : '' }}"><a class="nav-link"
+                    href="{{ route('value.index') }}">
+                    <i class="fas fa-address-card"></i>
+                    <span>Nilai Perusahaan</span>
+                </a>
+            </li>
             <li class="{{ Request::routeIs('gallery.*') ? 'active' : '' }}"><a class="nav-link"
                     href="{{ route('gallery.index') }}">
                     <i class="fas fa-images"></i>

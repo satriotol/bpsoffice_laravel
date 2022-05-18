@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\UnitController;
+use App\Http\Controllers\Admin\ValueController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CarrierController;
 use App\Http\Controllers\IndexController;
@@ -59,6 +60,7 @@ Route::middleware(['auth'])->group(function () {
         '/admin/carrier' => CarrierController::class,
         '/admin/image' => ImageController::class,
         '/admin/menu' => MenuController::class,
+        '/admin/value' => ValueController::class,
     ]);
 });
 

@@ -24,6 +24,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     @stack('style')
+    <style>
+        .required {
+            color: red;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -98,6 +104,12 @@
         $(document).ready(function() {
             $('#myTable').DataTable();
         });
+    </script>
+    <script>
+        $(function() {
+            $('.form-group:has(input[required]) > label')
+                .after('<span class="required">*</span>')
+        })
     </script>
 
     <!-- Page Specific JS File -->

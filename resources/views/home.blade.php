@@ -31,33 +31,25 @@
         <section id="features" class="features">
             <div class="container">
                 <div class="section-title aos-init aos-animate" data-aos="fade-up">
-                    <h2>Unit</h2>
+                    <h2>Nilai Nilai Perusahaan</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 mt-2 mb-tg-0 order-2 order-lg-1">
                         <ul class="nav nav-tabs flex-column">
-                            @foreach ($units as $unit)
+                            @foreach ($values as $value)
                                 @if ($loop->first)
                                     <li class="nav-item" data-aos="fade-up">
                                         <div class="nav-link active show" data-bs-toggle="tab"
-                                            href="#tab-{{ $unit->id }}">
-                                            <h4>{{ $unit->name }}</h4>
-                                            <p>{{ $unit->address }}</p>
-                                            <div style="text-align: right">
-                                                <a href="{{ route('detail_unit', $unit->id) }}"
-                                                    class="btn-primary-custom">Kunjungi</a>
-                                            </div>
+                                            href="#tab-{{ $value->id }}">
+                                            <h4>{{ $value->name }}</h4>
+                                            <p>{{ $value->address }}</p>
                                         </div>
                                     </li>
                                 @else
                                     <li class="nav-item" data-aos="fade-up">
-                                        <div class="nav-link" data-bs-toggle="tab" href="#tab-{{ $unit->id }}">
-                                            <h4>{{ $unit->name }}</h4>
-                                            <p>{{ $unit->address }}</p>
-                                            <div style="text-align: right">
-                                                <a href="{{ route('detail_unit', $unit->id) }}"
-                                                    class="btn-primary-custom">Kunjungi</a>
-                                            </div>
+                                        <div class="nav-link" data-bs-toggle="tab" href="#tab-{{ $value->id }}">
+                                            <h4>{{ $value->name }}</h4>
+                                            <p>{{ $value->address }}</p>
                                         </div>
                                     </li>
                                 @endif
@@ -66,21 +58,21 @@
                     </div>
                     <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in">
                         <div class="tab-content">
-                            @foreach ($units as $unit)
+                            @foreach ($values as $value)
                                 @if ($loop->first)
-                                    <div class="tab-pane active show" id="tab-{{ $unit->id }}">
+                                    <div class="tab-pane active show" id="tab-{{ $value->id }}">
                                         <figure>
-                                            <a href="{{ asset('uploads/' . $unit->image) }}" class="glightbox">
-                                                <img src="{{ asset('uploads/' . $unit->image) }}" alt=""
+                                            <a href="{{ asset('uploads/' . $value->image) }}" class="glightbox">
+                                                <img src="{{ asset('uploads/' . $value->image) }}" alt=""
                                                     class="img-fluid">
                                             </a>
                                         </figure>
                                     </div>
                                 @else
-                                    <div class="tab-pane" id="tab-{{ $unit->id }}">
+                                    <div class="tab-pane" id="tab-{{ $value->id }}">
                                         <figure>
-                                            <a href="{{ asset('uploads/' . $unit->image) }}" class="glightbox">
-                                                <img src="{{ asset('uploads/' . $unit->image) }}" alt=""
+                                            <a href="{{ asset('uploads/' . $value->image) }}" class="glightbox">
+                                                <img src="{{ asset('uploads/' . $value->image) }}" alt=""
                                                     class="img-fluid">
                                             </a>
                                         </figure>
@@ -92,6 +84,29 @@
                 </div>
             </div>
         </section>
+        <section id="services" class="services section-bg">
+            <div class="container">
+                <div class="section-title aos-init aos-animate" data-aos="fade-up">
+                    <h2>Unit</h2>
+                </div>
+                <div class="row">
+                    @foreach ($units as $unit)
+                        <div class="col-md-6 col-lg-3 mb-5 mb-lg-0 aos-init aos-animate" data-aos="zoom-in">
+                            <img src="{{ asset('uploads/' . $unit->image) }}" class="img-fluid" alt="">
+                            <div class="icon-box icon-box-blue">
+                                <h4 class="title"><a href="">{{ $unit->name }}</a></h4>
+                                <p class="description">
+                                    Alamat : {{ $unit->address }} <br>
+                                    Telepon : {{ $unit->phone }}
+                                </p>
+                                <a href="{{ route('detail_unit', $unit->id) }}" class="btn-primary-custom mt-2">Kunjungi</a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
         <section id="cta" class="cta">
             <div class="container">
 

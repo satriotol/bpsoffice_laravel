@@ -10,6 +10,7 @@ use App\Models\Menu;
 use App\Models\Partner;
 use App\Models\Slider;
 use App\Models\Unit;
+use App\Models\Value;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -24,10 +25,11 @@ class IndexController extends Controller
     public function home()
     {
         $sliders = Slider::all();
+        $values = Value::all();
         $units = Unit::all();
         $partners = Partner::all();
         $about = About::first();
-        return view('home', compact('sliders', 'units', 'partners', 'about'));
+        return view('home', compact('sliders', 'units', 'partners', 'about', 'values'));
     }
 
     public function detail_unit(Unit $unit)
