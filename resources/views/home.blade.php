@@ -105,7 +105,7 @@
                 <div class="section-title aos-init aos-animate" data-aos="fade-up">
                     <h2>Unit</h2>
                 </div>
-                <div class="row">
+                <div class="row justify-content-md-center">
                     @foreach ($units as $unit)
                         <div class="col-md-6 col-lg-3 aos-init aos-animate mb-2" data-aos="zoom-in">
                             <div class="card" style="height:100%">
@@ -148,7 +148,7 @@
                 <div class="section-title aos-init aos-animate" data-aos="fade-up">
                     <h2>Partner</h2>
                 </div>
-                <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
+                <div class="row no-gutters clients-wrap clearfix wow fadeInUp justify-content-md-center">
                     @foreach ($partners as $partner)
                         <div class="col-lg-3 col-md-4 col-xs-6">
                             <div class="client-logo aos-init aos-animate" data-aos="zoom-in">
