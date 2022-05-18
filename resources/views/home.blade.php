@@ -116,8 +116,8 @@
                                 <div class="card-body card-unit">
                                     <h5 class="card-title">{{ $unit->name }}</h5>
                                     <p class="card-text">
-                                        Alamat : {{ $unit->address }} <br>
-                                        Telepon : {{ $unit->phone }}
+                                        <b>Alamat : </b> {{ $unit->address }} <br>
+                                        <b>Telepon : </b> {{ $unit->phone }}
                                     </p>
                                     <div class="text-center">
                                         <a href="{{ route('detail_unit', $unit->id) }}"
