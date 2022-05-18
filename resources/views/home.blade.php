@@ -97,7 +97,7 @@
                                     style="height: 200px; width:100%;object-fit:cover">
                             </a>
 
-                            <div class="icon-box icon-box-blue">
+                            <div class="icon-box icon-box-blue" style="height: 300px">
                                 <h4 class="title"><a href="">{{ $unit->name }}</a></h4>
                                 <p class="description">
                                     Alamat : {{ $unit->address }} <br>
