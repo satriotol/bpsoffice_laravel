@@ -91,13 +91,13 @@
                 </div>
                 <div class="row">
                     @foreach ($units as $unit)
-                        <div class="col-md-6 col-lg-3 mb-5 mb-lg-0 aos-init aos-animate" data-aos="zoom-in">
+                        <div class="col-md-6 col-lg-3 mb-5 aos-init aos-animate" data-aos="zoom-in">
                             <a href="{{ asset('uploads/' . $unit->image) }}" class="glightbox">
                                 <img src="{{ asset('uploads/' . $unit->image) }}" style="height: 200px; width:100%;object-fit:cover;
-                                        background-color: white;">
+                                            background-color: white;">
                             </a>
 
-                            <div class="icon-box icon-box-blue" style="height: 300px">
+                            <div class="icon-box icon-box-blue" style="height: 100%">
                                 <h4 class="title"><a
                                         href="{{ route('detail_unit', $unit->id) }}">{{ $unit->name }}</a></h4>
                                 <p class="description">
