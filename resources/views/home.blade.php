@@ -104,7 +104,7 @@
                                     Telepon : {{ $unit->phone }}
                                 </p>
                                 <a href="{{ route('detail_unit', $unit->id) }}"
-                                    class="btn-primary-custom mt-2">Kunjungi</a>
+                                    class="btn-primary-custom mt-5">Kunjungi</a>
                             </div>
                         </div>
                     @endforeach
