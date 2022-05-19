@@ -14,16 +14,17 @@
                 </div>
             </div>
             <div class="card-body">
-                <table id="myTable" class="display">
+                <table class="table table-striped table-md">
                     <thead>
-                            <th>Image</th>
-                            <th>Action</th>
+                        <th>Image</th>
+                        <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($sliders as $slider)
                             <tr>
-                                <td><img src="{{ asset('uploads/'.$slider->image) }}" class="img-fluid" style="height: 100px" alt="">
+                                <td><img src="{{ asset('uploads/' . $slider->image) }}" class="img-fluid"
+                                        style="height: 100px" alt="">
                                 </td>
                                 <td>
                                     <a href="{{ route('slider.edit', $slider->id) }}" class="btn btn-warning">

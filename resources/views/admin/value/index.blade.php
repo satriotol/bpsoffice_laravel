@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <table id="myTable" class="display">
+                <table class="table table-striped table-md">
                     <thead>
                         <th>Nama</th>
                         <th>Image</th>
