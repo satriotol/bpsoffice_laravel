@@ -41,7 +41,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="news-box p-4">
-                                {!! $menu->menu_descriptions->first()->description !!}
+                                {!! $menu->menu_descriptions->first()->description ?? "" !!}
                             </div>
                         </div>
                     </div>
