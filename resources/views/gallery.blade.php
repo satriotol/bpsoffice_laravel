@@ -19,7 +19,7 @@
             <div class="container">
 
                 <div class="section-title aos-init aos-animate" data-aos="fade-up">
-                    <h2>Galeri</h2>
+                    <h2>Gallery</h2>
                 </div>
 
                 <div class="row portfolio-container aos-init aos-animate" data-aos="fade-up" data-aos-delay="200"
