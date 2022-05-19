@@ -44,6 +44,10 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="text-right">
+                    {{ $galleries->onEachSide(5)->links() }}
+                </div>
+
             </div>
         </div>
     </div>
