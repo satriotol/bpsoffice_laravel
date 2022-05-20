@@ -18,10 +18,9 @@
                 <li><a class="nav-link {{ Request::routeIs('karir') ? 'active' : '' }}"
                         href="{{ route('karir') }}">Karir</a></li>
                 @foreach ($menus as $menu)
-                    <li><a class="nav-link {{ Request::routeIs('menu') ? 'active' : '' }}"
+                    <li><a class="nav-link {{ request()->is('menu/'. $menu->slug) ? 'active' : '' }}"
                             href="{{ route('menu', $menu->slug) }}">{{ $menu->name }}</a></li>
                 @endforeach
-                {{-- <li><a class="nav-link">FPKK 01</a></li> --}}
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
