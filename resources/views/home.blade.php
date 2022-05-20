@@ -76,7 +76,7 @@
                         <div class="tab-content">
                             @foreach ($values as $value)
                                 @if ($loop->first)
-                                    <div class="tab-pane active show" id="tab-{{ $value->id }}">
+                                    <div class="tab-pane active show text-center" id="tab-{{ $value->id }}">
                                         <figure>
                                             <a href="{{ asset('uploads/' . $value->image) }}" class="glightbox">
                                                 <img src="{{ asset('uploads/' . $value->image) }}" alt=""
@@ -85,7 +85,7 @@
                                         </figure>
                                     </div>
                                 @else
-                                    <div class="tab-pane" id="tab-{{ $value->id }}">
+                                    <div class="tab-pane text-center" id="tab-{{ $value->id }}">
                                         <figure>
                                             <a href="{{ asset('uploads/' . $value->image) }}" class="glightbox">
                                                 <img src="{{ asset('uploads/' . $value->image) }}" alt=""
