@@ -2,7 +2,7 @@
 @push('style')
     <style>
         .jumbotron {
-            background: url("{{ asset('uploads/' . $menu->slider) }}") rgba(0, 156, 234, 0.7);
+            background: url("{{ asset('uploads/' . $menu->slider) }}");
             background-size: cover;
             background-position: center;
             background-blend-mode: multiply;
