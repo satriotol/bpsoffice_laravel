@@ -28,8 +28,10 @@
                             </div>
                             <div class="form-group">
                                 <label>Deskripsi</label>
-                                <textarea name="description" class="summernote" cols="30" rows="10"
-                                    required>{{ isset($unit) ? $unit->description : '' }}</textarea>
+                                <textarea name="description" class="summernote" cols="30" rows="10" required></textarea>
+                                <hr>
+                                {!! isset($unit) ? $unit->description : '' !!}
+                                <hr>
                             </div>
                             <div class="form-group">
                                 <label>Address</label>
